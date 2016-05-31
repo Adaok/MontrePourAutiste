@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F27" minimumToolsVersion="Automatic">
-    <entity name="Activity" syncable="YES">
+    <entity name="Activity" representedClassName=".Activity" syncable="YES">
         <attribute name="idActivity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="idImage" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="nameActivity" optional="YES" attributeType="String" syncable="YES"/>
@@ -8,24 +8,24 @@
         <relationship name="relationImageActivity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="relationActivityImage" inverseEntity="Image" syncable="YES"/>
         <relationship name="relationPlanningActivity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Planning" inverseName="relationActivityPlanning" inverseEntity="Planning" syncable="YES"/>
     </entity>
-    <entity name="Group" syncable="YES">
+    <entity name="Group" representedClassName=".Group" syncable="YES">
         <attribute name="idGroup" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="nameGroup" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="relationPatientGroup" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Patient" inverseName="relationGroupPatient" inverseEntity="Patient" syncable="YES"/>
     </entity>
-    <entity name="Image" syncable="YES">
+    <entity name="Image" representedClassName=".Image" syncable="YES">
         <attribute name="idImage" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="nameImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pathImage" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="relationActivityImage" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="relationImageActivity" inverseEntity="Activity" syncable="YES"/>
     </entity>
-    <entity name="Patient" syncable="YES">
+    <entity name="Patient" representedClassName=".Patient" syncable="YES">
         <attribute name="idPatient" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="namePatient" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="relationGroupPatient" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Group" inverseName="relationPatientGroup" inverseEntity="Group" syncable="YES"/>
         <relationship name="relationPlanningPatient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Planning" inverseName="relationPatientPlanning" inverseEntity="Planning" syncable="YES"/>
     </entity>
-    <entity name="Planning" syncable="YES">
+    <entity name="Planning" representedClassName=".Planning" syncable="YES">
         <attribute name="idActivity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="idImage" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="idPatient" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
