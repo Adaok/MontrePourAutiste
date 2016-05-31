@@ -25,6 +25,11 @@
 		73BD3EE71CFE2F23005C080D /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD3EDD1CFE2F23005C080D /* Group.swift */; };
 		73BD3EE81CFE2F23005C080D /* Patient+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD3EDE1CFE2F23005C080D /* Patient+CoreDataProperties.swift */; };
 		73BD3EE91CFE2F23005C080D /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD3EDF1CFE2F23005C080D /* Patient.swift */; };
+		73BD3EEC1CFE2FA0005C080D /* ActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD3EEB1CFE2FA0005C080D /* ActivityManager.swift */; };
+		73BD3EEE1CFE2FCA005C080D /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD3EED1CFE2FCA005C080D /* ImageManager.swift */; };
+		73BD3EF01CFE2FEA005C080D /* PlanningManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD3EEF1CFE2FEA005C080D /* PlanningManager.swift */; };
+		73BD3EF21CFE3001005C080D /* GroupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD3EF11CFE3001005C080D /* GroupManager.swift */; };
+		73BD3EF41CFE3024005C080D /* PatientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD3EF31CFE3024005C080D /* PatientManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +74,11 @@
 		73BD3EDD1CFE2F23005C080D /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Group.swift; path = Database/Group.swift; sourceTree = "<group>"; };
 		73BD3EDE1CFE2F23005C080D /* Patient+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Patient+CoreDataProperties.swift"; path = "Database/Patient+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		73BD3EDF1CFE2F23005C080D /* Patient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Patient.swift; path = Database/Patient.swift; sourceTree = "<group>"; };
+		73BD3EEB1CFE2FA0005C080D /* ActivityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityManager.swift; path = Database/Manager/ActivityManager.swift; sourceTree = "<group>"; };
+		73BD3EED1CFE2FCA005C080D /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageManager.swift; path = Database/Manager/ImageManager.swift; sourceTree = "<group>"; };
+		73BD3EEF1CFE2FEA005C080D /* PlanningManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanningManager.swift; path = Database/Manager/PlanningManager.swift; sourceTree = "<group>"; };
+		73BD3EF11CFE3001005C080D /* GroupManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupManager.swift; path = Database/Manager/GroupManager.swift; sourceTree = "<group>"; };
+		73BD3EF31CFE3024005C080D /* PatientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatientManager.swift; path = Database/Manager/PatientManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +162,7 @@
 		73BD3ED51CFE2EEE005C080D /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				73BD3EEA1CFE2F4F005C080D /* Manager */,
 				73BD3ED61CFE2F23005C080D /* Activity+CoreDataProperties.swift */,
 				73BD3ED71CFE2F23005C080D /* Activity.swift */,
 				73BD3ED81CFE2F23005C080D /* Image+CoreDataProperties.swift */,
@@ -164,6 +175,18 @@
 				73BD3EDF1CFE2F23005C080D /* Patient.swift */,
 			);
 			name = Database;
+			sourceTree = "<group>";
+		};
+		73BD3EEA1CFE2F4F005C080D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				73BD3EEB1CFE2FA0005C080D /* ActivityManager.swift */,
+				73BD3EED1CFE2FCA005C080D /* ImageManager.swift */,
+				73BD3EEF1CFE2FEA005C080D /* PlanningManager.swift */,
+				73BD3EF11CFE3001005C080D /* GroupManager.swift */,
+				73BD3EF31CFE3024005C080D /* PatientManager.swift */,
+			);
+			name = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,14 +322,19 @@
 			files = (
 				73BD3EE71CFE2F23005C080D /* Group.swift in Sources */,
 				73BD3EE31CFE2F23005C080D /* Image.swift in Sources */,
+				73BD3EF21CFE3001005C080D /* GroupManager.swift in Sources */,
+				73BD3EF01CFE2FEA005C080D /* PlanningManager.swift in Sources */,
 				73BD3EE11CFE2F23005C080D /* Activity.swift in Sources */,
 				73BD3EE91CFE2F23005C080D /* Patient.swift in Sources */,
 				73BD3EE41CFE2F23005C080D /* Planning+CoreDataProperties.swift in Sources */,
 				73BD3EE51CFE2F23005C080D /* Planning.swift in Sources */,
+				73BD3EEE1CFE2FCA005C080D /* ImageManager.swift in Sources */,
+				73BD3EF41CFE3024005C080D /* PatientManager.swift in Sources */,
 				73BD3EE01CFE2F23005C080D /* Activity+CoreDataProperties.swift in Sources */,
 				73BD3EA71CFE2977005C080D /* ViewController.swift in Sources */,
 				73BD3EE21CFE2F23005C080D /* Image+CoreDataProperties.swift in Sources */,
 				73BD3EE61CFE2F23005C080D /* Group+CoreDataProperties.swift in Sources */,
+				73BD3EEC1CFE2FA0005C080D /* ActivityManager.swift in Sources */,
 				73BD3EAD1CFE2977005C080D /* AutisteWatch.xcdatamodeld in Sources */,
 				73BD3EE81CFE2F23005C080D /* Patient+CoreDataProperties.swift in Sources */,
 				73BD3EA51CFE2977005C080D /* AppDelegate.swift in Sources */,
