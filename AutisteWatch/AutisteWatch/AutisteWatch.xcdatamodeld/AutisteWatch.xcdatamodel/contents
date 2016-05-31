@@ -1,4 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F27" minimumToolsVersion="Automatic">
+    <entity name="Activity" syncable="YES">
+        <attribute name="idActivity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="idImage" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="nameActivity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rememberHourActivity" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="relationImageActivity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="relationActivityImage" inverseEntity="Image" syncable="YES"/>
+        <relationship name="relationPlanningActivity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Planning" inverseName="relationActivityPlanning" inverseEntity="Planning" syncable="YES"/>
+    </entity>
+    <entity name="Group" syncable="YES">
+        <attribute name="idGroup" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="nameGroup" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationPatientGroup" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Patient" inverseName="relationGroupPatient" inverseEntity="Patient" syncable="YES"/>
+    </entity>
+    <entity name="Image" syncable="YES">
+        <attribute name="idImage" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="nameImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pathImage" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationActivityImage" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="relationImageActivity" inverseEntity="Activity" syncable="YES"/>
+    </entity>
+    <entity name="Patient" syncable="YES">
+        <attribute name="idPatient" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="namePatient" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationGroupPatient" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Group" inverseName="relationPatientGroup" inverseEntity="Group" syncable="YES"/>
+        <relationship name="relationPlanningPatient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Planning" inverseName="relationPatientPlanning" inverseEntity="Planning" syncable="YES"/>
+    </entity>
+    <entity name="Planning" syncable="YES">
+        <attribute name="idActivity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="idImage" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="idPatient" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="relationActivityPlanning" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="relationPlanningActivity" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="relationPatientPlanning" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="relationPlanningPatient" inverseEntity="Patient" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Patient" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Activity" positionX="-54" positionY="18" width="128" height="135"/>
+        <element name="Planning" positionX="-36" positionY="45" width="128" height="120"/>
+        <element name="Group" positionX="-18" positionY="63" width="128" height="90"/>
+        <element name="Image" positionX="0" positionY="72" width="128" height="105"/>
+    </elements>
 </model>
