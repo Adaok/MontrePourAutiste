@@ -50,7 +50,7 @@
                             <outlet property="delegate" destination="wkX-fV-W0c" id="Oj6-Xo-Oc0"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Patients" id="qe4-Yz-1By"/>
+                    <tabBarItem key="tabBarItem" title="Patients" image="Patient" id="qe4-Yz-1By"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -547,7 +547,7 @@
                             <outlet property="delegate" destination="igY-kb-bdY" id="kyN-If-yoc"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Groupes" id="H93-S4-xR7"/>
+                    <tabBarItem key="tabBarItem" title="Groupes" image="Group" id="H93-S4-xR7"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="5bM-YQ-fDT" kind="show" identifier="toAddGroup" id="jlg-tL-Sqm"/>
@@ -626,7 +626,7 @@
                             <outlet property="delegate" destination="kLb-wN-ahz" id="Jc6-Gz-WNh"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Activités" id="3Fo-mT-JrS"/>
+                    <tabBarItem key="tabBarItem" title="Activités" image="Activity" id="3Fo-mT-JrS"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="hIh-Nq-mGx" kind="show" identifier="toAddActivity" id="Zwz-fp-EvY"/>
@@ -782,6 +782,11 @@
             <point key="canvasLocation" x="2776.5" y="-505.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Activity" width="17" height="17"/>
+        <image name="Group" width="17" height="17"/>
+        <image name="Patient" width="17" height="17"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Tmq-co-uJY"/>
         <segue reference="I9W-Z1-rvl"/>

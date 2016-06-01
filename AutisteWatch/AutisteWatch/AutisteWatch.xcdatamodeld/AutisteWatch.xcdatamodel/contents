@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F27" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Automatic">
     <entity name="Activity" representedClassName=".Activity" syncable="YES">
         <attribute name="idActivity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="idImage" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -33,10 +33,10 @@
         <relationship name="relationPatientPlanning" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="relationPlanningPatient" inverseEntity="Patient" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Patient" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="Activity" positionX="-54" positionY="18" width="128" height="135"/>
-        <element name="Planning" positionX="-36" positionY="45" width="128" height="120"/>
-        <element name="Group" positionX="-18" positionY="63" width="128" height="90"/>
-        <element name="Image" positionX="0" positionY="72" width="128" height="105"/>
+        <element name="Activity" positionX="-198" positionY="432" width="128" height="135"/>
+        <element name="Group" positionX="-261" positionY="-108" width="128" height="90"/>
+        <element name="Image" positionX="421" positionY="426" width="128" height="105"/>
+        <element name="Patient" positionX="-612" positionY="21" width="128" height="105"/>
+        <element name="Planning" positionX="-515" positionY="198" width="128" height="120"/>
     </elements>
 </model>
