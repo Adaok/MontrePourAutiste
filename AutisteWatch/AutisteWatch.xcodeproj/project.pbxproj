@@ -30,6 +30,15 @@
 		73BD3EF01CFE2FEA005C080D /* PlanningManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD3EEF1CFE2FEA005C080D /* PlanningManager.swift */; };
 		73BD3EF21CFE3001005C080D /* GroupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD3EF11CFE3001005C080D /* GroupManager.swift */; };
 		73BD3EF41CFE3024005C080D /* PatientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD3EF31CFE3024005C080D /* PatientManager.swift */; };
+		B8E9E18F1CFF0DC200B70923 /* ActivitiesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9E18E1CFF0DC200B70923 /* ActivitiesListViewController.swift */; };
+		B8E9E1911CFF0DD600B70923 /* GroupsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9E1901CFF0DD600B70923 /* GroupsListViewController.swift */; };
+		B8E9E1931CFF0DE500B70923 /* PatientsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9E1921CFF0DE500B70923 /* PatientsListViewController.swift */; };
+		B8E9E1951CFF0E2500B70923 /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9E1941CFF0E2500B70923 /* ActivityDetailViewController.swift */; };
+		B8E9E19A1CFF0E8C00B70923 /* PlanOrNotifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9E1991CFF0E8C00B70923 /* PlanOrNotifyViewController.swift */; };
+		B8E9E19C1CFF0EAA00B70923 /* PlanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9E19B1CFF0EAA00B70923 /* PlanningViewController.swift */; };
+		B8E9E19E1CFF0ECE00B70923 /* ImgSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9E19D1CFF0ECE00B70923 /* ImgSelectionViewController.swift */; };
+		B8E9E1A01CFF0EFB00B70923 /* AddElementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9E19F1CFF0EFB00B70923 /* AddElementViewController.swift */; };
+		B8E9E1A31CFF110900B70923 /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9E1A21CFF110900B70923 /* Segues.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +88,15 @@
 		73BD3EEF1CFE2FEA005C080D /* PlanningManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanningManager.swift; path = Database/Manager/PlanningManager.swift; sourceTree = "<group>"; };
 		73BD3EF11CFE3001005C080D /* GroupManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupManager.swift; path = Database/Manager/GroupManager.swift; sourceTree = "<group>"; };
 		73BD3EF31CFE3024005C080D /* PatientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatientManager.swift; path = Database/Manager/PatientManager.swift; sourceTree = "<group>"; };
+		B8E9E18E1CFF0DC200B70923 /* ActivitiesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesListViewController.swift; sourceTree = "<group>"; };
+		B8E9E1901CFF0DD600B70923 /* GroupsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsListViewController.swift; sourceTree = "<group>"; };
+		B8E9E1921CFF0DE500B70923 /* PatientsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientsListViewController.swift; sourceTree = "<group>"; };
+		B8E9E1941CFF0E2500B70923 /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
+		B8E9E1991CFF0E8C00B70923 /* PlanOrNotifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanOrNotifyViewController.swift; sourceTree = "<group>"; };
+		B8E9E19B1CFF0EAA00B70923 /* PlanningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanningViewController.swift; sourceTree = "<group>"; };
+		B8E9E19D1CFF0ECE00B70923 /* ImgSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImgSelectionViewController.swift; sourceTree = "<group>"; };
+		B8E9E19F1CFF0EFB00B70923 /* AddElementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddElementViewController.swift; sourceTree = "<group>"; };
+		B8E9E1A21CFF110900B70923 /* Segues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +147,8 @@
 		73BD3EA31CFE2977005C080D /* AutisteWatch */ = {
 			isa = PBXGroup;
 			children = (
+				B8E9E1A11CFF10F100B70923 /* Constants */,
+				B8E9E18A1CFF0D1400B70923 /* View Controllers */,
 				73BD3ED51CFE2EEE005C080D /* Database */,
 				73BD3EA41CFE2977005C080D /* AppDelegate.swift */,
 				73BD3EA61CFE2977005C080D /* ViewController.swift */,
@@ -187,6 +207,61 @@
 				73BD3EF31CFE3024005C080D /* PatientManager.swift */,
 			);
 			name = Manager;
+			sourceTree = "<group>";
+		};
+		B8E9E18A1CFF0D1400B70923 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B8E9E1981CFF0E6800B70923 /* MultipleTabs */,
+				B8E9E18D1CFF0D5600B70923 /* Patients */,
+				B8E9E18C1CFF0D4D00B70923 /* Groups */,
+				B8E9E18B1CFF0D4000B70923 /* Activities */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B8E9E18B1CFF0D4000B70923 /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				B8E9E18E1CFF0DC200B70923 /* ActivitiesListViewController.swift */,
+				B8E9E1941CFF0E2500B70923 /* ActivityDetailViewController.swift */,
+			);
+			path = Activities;
+			sourceTree = "<group>";
+		};
+		B8E9E18C1CFF0D4D00B70923 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				B8E9E1901CFF0DD600B70923 /* GroupsListViewController.swift */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
+		B8E9E18D1CFF0D5600B70923 /* Patients */ = {
+			isa = PBXGroup;
+			children = (
+				B8E9E1921CFF0DE500B70923 /* PatientsListViewController.swift */,
+			);
+			path = Patients;
+			sourceTree = "<group>";
+		};
+		B8E9E1981CFF0E6800B70923 /* MultipleTabs */ = {
+			isa = PBXGroup;
+			children = (
+				B8E9E1991CFF0E8C00B70923 /* PlanOrNotifyViewController.swift */,
+				B8E9E19B1CFF0EAA00B70923 /* PlanningViewController.swift */,
+				B8E9E19D1CFF0ECE00B70923 /* ImgSelectionViewController.swift */,
+				B8E9E19F1CFF0EFB00B70923 /* AddElementViewController.swift */,
+			);
+			path = MultipleTabs;
+			sourceTree = "<group>";
+		};
+		B8E9E1A11CFF10F100B70923 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B8E9E1A21CFF110900B70923 /* Segues.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,22 +395,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8E9E1951CFF0E2500B70923 /* ActivityDetailViewController.swift in Sources */,
 				73BD3EE71CFE2F23005C080D /* Group.swift in Sources */,
 				73BD3EE31CFE2F23005C080D /* Image.swift in Sources */,
 				73BD3EF21CFE3001005C080D /* GroupManager.swift in Sources */,
 				73BD3EF01CFE2FEA005C080D /* PlanningManager.swift in Sources */,
+				B8E9E19E1CFF0ECE00B70923 /* ImgSelectionViewController.swift in Sources */,
+				B8E9E18F1CFF0DC200B70923 /* ActivitiesListViewController.swift in Sources */,
+				B8E9E1A31CFF110900B70923 /* Segues.swift in Sources */,
 				73BD3EE11CFE2F23005C080D /* Activity.swift in Sources */,
 				73BD3EE91CFE2F23005C080D /* Patient.swift in Sources */,
 				73BD3EE41CFE2F23005C080D /* Planning+CoreDataProperties.swift in Sources */,
+				B8E9E1911CFF0DD600B70923 /* GroupsListViewController.swift in Sources */,
 				73BD3EE51CFE2F23005C080D /* Planning.swift in Sources */,
+				B8E9E19A1CFF0E8C00B70923 /* PlanOrNotifyViewController.swift in Sources */,
+				B8E9E1A01CFF0EFB00B70923 /* AddElementViewController.swift in Sources */,
 				73BD3EEE1CFE2FCA005C080D /* ImageManager.swift in Sources */,
 				73BD3EF41CFE3024005C080D /* PatientManager.swift in Sources */,
 				73BD3EE01CFE2F23005C080D /* Activity+CoreDataProperties.swift in Sources */,
 				73BD3EA71CFE2977005C080D /* ViewController.swift in Sources */,
+				B8E9E1931CFF0DE500B70923 /* PatientsListViewController.swift in Sources */,
 				73BD3EE21CFE2F23005C080D /* Image+CoreDataProperties.swift in Sources */,
 				73BD3EE61CFE2F23005C080D /* Group+CoreDataProperties.swift in Sources */,
 				73BD3EEC1CFE2FA0005C080D /* ActivityManager.swift in Sources */,
 				73BD3EAD1CFE2977005C080D /* AutisteWatch.xcdatamodeld in Sources */,
+				B8E9E19C1CFF0EAA00B70923 /* PlanningViewController.swift in Sources */,
 				73BD3EE81CFE2F23005C080D /* Patient+CoreDataProperties.swift in Sources */,
 				73BD3EA51CFE2977005C080D /* AppDelegate.swift in Sources */,
 			);
@@ -564,6 +648,7 @@
 				73BD3ECE1CFE2977005C080D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		73BD3ECF1CFE2977005C080D /* Build configuration list for PBXNativeTarget "AutisteWatchTests" */ = {
 			isa = XCConfigurationList;
@@ -572,6 +657,7 @@
 				73BD3ED11CFE2977005C080D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		73BD3ED21CFE2977005C080D /* Build configuration list for PBXNativeTarget "AutisteWatchUITests" */ = {
 			isa = XCConfigurationList;
@@ -580,6 +666,7 @@
 				73BD3ED41CFE2977005C080D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
