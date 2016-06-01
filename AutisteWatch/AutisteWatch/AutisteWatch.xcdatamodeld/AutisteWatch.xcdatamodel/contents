@@ -23,20 +23,20 @@
         <attribute name="idPatient" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="namePatient" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="relationGroupPatient" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Group" inverseName="relationPatientGroup" inverseEntity="Group" syncable="YES"/>
-        <relationship name="relationPlanningPatient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Planning" inverseName="relationPatientPlanning" inverseEntity="Planning" syncable="YES"/>
+        <relationship name="relationPlanningPatient" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Planning" inverseName="relationPatientPlanning" inverseEntity="Planning" syncable="YES"/>
     </entity>
     <entity name="Planning" representedClassName=".Planning" syncable="YES">
         <attribute name="idActivity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="idImage" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="idPatient" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="relationActivityPlanning" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="relationPlanningActivity" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="relationActivityPlanning" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" inverseName="relationPlanningActivity" inverseEntity="Activity" syncable="YES"/>
         <relationship name="relationPatientPlanning" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="relationPlanningPatient" inverseEntity="Patient" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Activity" positionX="-54" positionY="18" width="128" height="135"/>
-        <element name="Group" positionX="-18" positionY="63" width="128" height="90"/>
-        <element name="Image" positionX="0" positionY="72" width="128" height="105"/>
-        <element name="Patient" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="Planning" positionX="-36" positionY="45" width="128" height="120"/>
+        <element name="Activity" positionX="-29" positionY="189" width="128" height="135"/>
+        <element name="Group" positionX="-108" positionY="-225" width="128" height="90"/>
+        <element name="Image" positionX="171" positionY="243" width="128" height="105"/>
+        <element name="Patient" positionX="-450" positionY="-96" width="128" height="103"/>
+        <element name="Planning" positionX="-281" positionY="189" width="128" height="118"/>
     </elements>
 </model>

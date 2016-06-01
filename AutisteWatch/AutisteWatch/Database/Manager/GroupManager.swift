@@ -40,4 +40,10 @@ class GroupManager: NSObject {
         
         return [Group]()
     }
+    
+    func addPatientsToGroup(patients:[Patient], group: Group)->Group{
+        let patientsSelected = NSSet.init(array: patients)
+        group.relationPatientGroup = patientsSelected
+        return group
+    }
 }

@@ -24,8 +24,6 @@ class PatientManager: NSObject {
         let patient = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedObjectContext) as! Patient
         patient.namePatient = name
         patient.idPatient = idWatch
-        let planningManager = PlanningManager()
-        patient.relationPlanningPatient = planningManager.createPlanning(patient)
         if group != nil{
             let groups:NSSet
             groups = NSSet.init(object: group!)
@@ -47,6 +45,12 @@ class PatientManager: NSObject {
         }
         
         return [Patient]()
+    }
+    
+    func addGroupsToPatient(patient:Patient, groups: [Group])->Patient{
+        let groupsSelected = NSSet.init(array: groups)
+        patient.relationGroupPatient = groupsSelected
+        return patient
     }
 
 }
