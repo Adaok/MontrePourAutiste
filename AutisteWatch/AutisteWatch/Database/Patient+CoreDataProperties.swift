@@ -14,7 +14,7 @@ import CoreData
 
 extension Patient {
 
-    @NSManaged var idPatient: NSNumber?
+    @NSManaged var idPatient: String?
     @NSManaged var namePatient: String?
     @NSManaged var relationGroupPatient: NSSet?
     @NSManaged var relationPlanningPatient: Planning?
