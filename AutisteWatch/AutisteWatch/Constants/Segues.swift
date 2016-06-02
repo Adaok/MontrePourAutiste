@@ -16,6 +16,7 @@ struct Segues {
     // MARK: - Groups Tab
     static let toPlanGroup = "toPlanGroup"
     static let toAddGroup = "toAddGroup"
+    static let toEditGroup = "toEditGroup"
     
     // MARK: - Patients Tab
     static let toPlanPatient = "toPlanPatient"

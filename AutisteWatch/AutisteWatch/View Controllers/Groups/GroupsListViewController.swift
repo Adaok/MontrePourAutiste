@@ -64,6 +64,7 @@ class GroupsListViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let groupCell = groups![indexPath.row]
         let cell = tableView.dequeueReusableCellWithIdentifier("GroupCell")
+        
         cell?.textLabel?.text = groupCell.nameGroup
 
         return cell!
