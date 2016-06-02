@@ -8,10 +8,15 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "oneActivity"
 
 class ActivitiesListViewController: UICollectionViewController {
-
+    var addActivityButton: UIBarButtonItem?
+    var backButton: UIBarButtonItem?
+    
+    
+    // MARK - Lyfecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,8 +25,11 @@ class ActivitiesListViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+        addActivityButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(self.addActivityAction))
+        self.tabBarController?.navigationItem.title = "Activities"
+        
         // Do any additional setup after loading the view.
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,7 +51,7 @@ class ActivitiesListViewController: UICollectionViewController {
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
@@ -58,6 +66,12 @@ class ActivitiesListViewController: UICollectionViewController {
         // Configure the cell
     
         return cell
+    }
+    
+    // MARK: Actions
+    
+    func addActivityAction() {
+        
     }
 
     // MARK: UICollectionViewDelegate
