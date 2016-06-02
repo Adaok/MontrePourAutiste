@@ -10,9 +10,12 @@ import UIKit
 
 class GroupsListViewController: UITableViewController {
     
+    
     var appDelegate: AppDelegate{
         return UIApplication.sharedApplication().delegate as! AppDelegate
     }
+    
+    var addGroupButton:UIBarButtonItem?
     
     let groupManager = GroupManager()
     
@@ -20,6 +23,9 @@ class GroupsListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        addGroupButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(self.addGroupAction))
+        self.tabBarController!.title = "Groupes"
+        self.tabBarController!.navigationItem.setRightBarButtonItem(addGroupButton, animated: true)
         
         groupManager.createGroup("toto")
         groupManager.createGroup("tutu")
@@ -56,11 +62,14 @@ class GroupsListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("GroupCell")
         cell?.textLabel?.text = groupCell.nameGroup
 
-        // Configure the cell...
-
         return cell!
     }
- 
+
+    // MARK: Actions
+    
+    func addGroupAction () {
+        performSegueWithIdentifier(Segues.toAddGroup, sender: addGroupButton)
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -97,7 +106,7 @@ class GroupsListViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -105,6 +114,6 @@ class GroupsListViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+ 
 
 }
