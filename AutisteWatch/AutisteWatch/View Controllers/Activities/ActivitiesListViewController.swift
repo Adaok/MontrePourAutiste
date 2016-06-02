@@ -24,7 +24,8 @@ class ActivitiesListViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView?.backgroundColor = UIColor.whiteColor()
         addActivityButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(self.addActivityAction))
         // Do any additional setup after loading the view.
     
@@ -66,16 +67,15 @@ class ActivitiesListViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
-        let imgActivity: UIImageView = (cell.viewWithTag(1) as! UIImageView)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! ActivityViewCell
         
         if indexPath.row == 0 {
-            (cell.viewWithTag(1) as! UIImageView).image = UIImage(named: "Bed")
+            cell.imgVw_activityImage.image = UIImage(named: "Bed")
+            cell.lbl_activityName.text = "Bed"
         } else {
-            (cell.viewWithTag(1) as! UIImageView).image = UIImage(named: "Eat")
+            cell.imgVw_activityImage.image = UIImage(named: "Eat")
+            cell.lbl_activityName.text = "Eat"
         }
-    
-        
         // Configure the cell
     
         return cell
