@@ -11,6 +11,8 @@ import CoreData
 
 class PatientManager: NSObject {
     
+    static let sharedInstance = PatientManager()
+    
     var appDelegate: AppDelegate{
         return UIApplication.sharedApplication().delegate as! AppDelegate
     }

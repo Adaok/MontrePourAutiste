@@ -11,6 +11,8 @@ import CoreData
 
 class ActivityManager: NSObject {
     
+    static let sharedInstance = ActivityManager()
+    
     var appDelegate: AppDelegate{
         return UIApplication.sharedApplication().delegate as! AppDelegate
     }

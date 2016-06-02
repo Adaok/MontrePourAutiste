@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 
 class GroupManager: NSObject {
+    
+    static let sharedInstance = GroupManager()
 
     var appDelegate: AppDelegate{
         return UIApplication.sharedApplication().delegate as! AppDelegate
@@ -19,10 +21,15 @@ class GroupManager: NSObject {
         return appDelegate.managedObjectContext
     }
     
-    func createGroup(groupName: String)->Group{
+    func createGroup(groupName: String, patients:[Patient]?)->Group{
         let entity = NSEntityDescription.entityForName("Group", inManagedObjectContext: managedObjectContext)
         let group = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedObjectContext) as! Group
         group.nameGroup=groupName
+        if patients != nil {
+            let patientsToAdd:NSSet
+            patientsToAdd = NSSet.init(array: patients!)
+            group.relationPatientGroup = patientsToAdd
+        }
         return group
     }
     
