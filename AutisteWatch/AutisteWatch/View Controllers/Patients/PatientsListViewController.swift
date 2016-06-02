@@ -25,6 +25,10 @@ class PatientsListViewController: UITableViewController {
         self.clearsSelectionOnViewWillAppear = false
         
         addPatientButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add , target: self, action: #selector(PatientsListViewController.addPatientItemAction))
+
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         self.tabBarController!.title = "Patients"
         self.tabBarController!.navigationItem.setRightBarButtonItem(addPatientButton, animated: true)
     }

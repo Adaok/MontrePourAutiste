@@ -24,8 +24,7 @@ class GroupsListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addGroupButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(self.addGroupAction))
-        self.tabBarController!.title = "Groupes"
-        self.tabBarController!.navigationItem.setRightBarButtonItem(addGroupButton, animated: true)
+        
         
         groupManager.createGroup("toto")
         groupManager.createGroup("tutu")
@@ -37,6 +36,11 @@ class GroupsListViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.tabBarController!.title = "Groupes"
+        self.tabBarController!.navigationItem.setRightBarButtonItem(addGroupButton, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
