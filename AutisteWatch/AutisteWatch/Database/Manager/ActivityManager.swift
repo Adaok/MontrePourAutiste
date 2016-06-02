@@ -61,5 +61,16 @@ class ActivityManager: NSObject {
         
         return [Activity]()
     }
+    
+    func deleteActivities(activities:[Activity]){
+        for var activity:Activity in activities{
+            self.managedObjectContext.deleteObject(activity)
+        }
+        do {
+            try self.managedObjectContext.save()
+        } catch let error as NSError {
+            print("Could not delete Activity : \(error)")
+        }
+    }
 
 }

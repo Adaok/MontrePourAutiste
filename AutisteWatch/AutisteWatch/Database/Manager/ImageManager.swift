@@ -35,10 +35,21 @@ class ImageManager: NSObject {
             let result = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Image]
             return result
         } catch let error as NSError {
-            print("Could not fetch Activities : \(error)")
+            print("Could not fetch Images : \(error)")
         }
         
         return [Image]()
+    }
+    
+    func deleteImages(images:[Image]){
+        for var image:Image in images{
+            self.managedObjectContext.deleteObject(image)
+        }
+        do {
+            try self.managedObjectContext.save()
+        } catch let error as NSError {
+            print("Could not delete Image : \(error)")
+        }
     }
 
 }

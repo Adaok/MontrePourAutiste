@@ -16,6 +16,7 @@ extension Patient {
 
     @NSManaged var idPatient: String?
     @NSManaged var namePatient: String?
+    @NSManaged var idWatch: String?
     @NSManaged var relationGroupPatient: NSSet?
     @NSManaged var relationPlanningPatient: Planning?
 

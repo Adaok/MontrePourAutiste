@@ -54,5 +54,15 @@ class PatientManager: NSObject {
         patient.relationGroupPatient = groupsSelected
         return patient
     }
+    
+    func deletePatient(patient:Patient){
+        self.managedObjectContext.deleteObject(patient)
+        do {
+            try self.managedObjectContext.save()
+        } catch let error as NSError {
+            print("Could not delete Patient : \(error)")
+        }
+    }
+    
 
 }

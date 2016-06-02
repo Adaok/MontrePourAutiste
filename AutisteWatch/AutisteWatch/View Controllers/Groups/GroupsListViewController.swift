@@ -26,8 +26,8 @@ class GroupsListViewController: UITableViewController {
         addGroupButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(self.addGroupAction))
         
         
-        groupManager.createGroup("toto")
-        groupManager.createGroup("tutu")
+        groupManager.createGroup("toto",patients: nil)
+        groupManager.createGroup("tutu",patients: nil)
         
         groups = groupManager.fetchGroups()
 
