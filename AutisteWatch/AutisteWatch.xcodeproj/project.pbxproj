@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		73BD3EA51CFE2977005C080D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD3EA41CFE2977005C080D /* AppDelegate.swift */; };
-		73BD3EA71CFE2977005C080D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD3EA61CFE2977005C080D /* ViewController.swift */; };
 		73BD3EAA1CFE2977005C080D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73BD3EA81CFE2977005C080D /* Main.storyboard */; };
 		73BD3EAD1CFE2977005C080D /* AutisteWatch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 73BD3EAB1CFE2977005C080D /* AutisteWatch.xcdatamodeld */; };
 		73BD3EAF1CFE2977005C080D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73BD3EAE1CFE2977005C080D /* Assets.xcassets */; };
@@ -61,7 +60,6 @@
 /* Begin PBXFileReference section */
 		73BD3EA11CFE2977005C080D /* AutisteWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutisteWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73BD3EA41CFE2977005C080D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		73BD3EA61CFE2977005C080D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		73BD3EA91CFE2977005C080D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		73BD3EAC1CFE2977005C080D /* AutisteWatch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AutisteWatch.xcdatamodel; sourceTree = "<group>"; };
 		73BD3EAE1CFE2977005C080D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 				B8E9E18A1CFF0D1400B70923 /* View Controllers */,
 				73BD3ED51CFE2EEE005C080D /* Database */,
 				73BD3EA41CFE2977005C080D /* AppDelegate.swift */,
-				73BD3EA61CFE2977005C080D /* ViewController.swift */,
 				73BD3EA81CFE2977005C080D /* Main.storyboard */,
 				73BD3EAE1CFE2977005C080D /* Assets.xcassets */,
 				73BD3EB31CFE2977005C080D /* Info.plist */,
@@ -414,7 +411,6 @@
 				73BD3EEE1CFE2FCA005C080D /* ImageManager.swift in Sources */,
 				73BD3EF41CFE3024005C080D /* PatientManager.swift in Sources */,
 				73BD3EE01CFE2F23005C080D /* Activity+CoreDataProperties.swift in Sources */,
-				73BD3EA71CFE2977005C080D /* ViewController.swift in Sources */,
 				B8E9E1931CFF0DE500B70923 /* PatientsListViewController.swift in Sources */,
 				73BD3EE21CFE2F23005C080D /* Image+CoreDataProperties.swift in Sources */,
 				73BD3EE61CFE2F23005C080D /* Group+CoreDataProperties.swift in Sources */,
