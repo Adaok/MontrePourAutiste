@@ -15,6 +15,7 @@ class AddElementViewController: UIViewController {
     var isPatient : Bool = false
     var isGroup : Bool = false
     
+    @IBOutlet weak var txtFld_elementsName: UITextField!
     var donebutton = UIBarButtonItem()
     
     override func viewDidLoad() {

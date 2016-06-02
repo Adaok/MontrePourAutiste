@@ -14,7 +14,7 @@ class ActivitiesListViewController: UICollectionViewController {
     var addActivityButton: UIBarButtonItem?
     var backButton: UIBarButtonItem?
     
-    
+    var activities: [Activity]?
     // MARK - Lyfecycle
     
     override func viewDidLoad() {
@@ -60,12 +60,22 @@ class ActivitiesListViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+//        return activities!.count
+        return 2
+        
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
+        let imgActivity: UIImageView = (cell.viewWithTag(1) as! UIImageView)
+        
+        if indexPath.row == 0 {
+            (cell.viewWithTag(1) as! UIImageView).image = UIImage(named: "Bed")
+        } else {
+            (cell.viewWithTag(1) as! UIImageView).image = UIImage(named: "Eat")
+        }
     
+        
         // Configure the cell
     
         return cell
