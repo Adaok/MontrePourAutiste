@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddElementViewController: UIViewController {
+class AddElementViewController: UIViewController , UITextFieldDelegate{
     
     var patientToEdit : Patient?
     var groupToEdit : Group?
@@ -16,25 +16,48 @@ class AddElementViewController: UIViewController {
     var isGroup : Bool = false
     
     @IBOutlet weak var txtFld_elementsName: UITextField!
-    var donebutton = UIBarButtonItem()
+    
+    var doneButton = UIBarButtonItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        donebutton = UIBarButtonItem(barButtonSystemItem: .Done , target: self, action: #selector(self.doneAction))
-        donebutton.enabled = false
+        doneButton = UIBarButtonItem(barButtonSystemItem: .Done , target: self, action: #selector(self.doneAction))
+        doneButton.enabled = false
         
-        self.navigationItem.setRightBarButtonItem(donebutton, animated: true)
+        self.navigationItem.setRightBarButtonItem(doneButton, animated: true)
         
         if isPatient {
             if patientToEdit != nil {
                 self.navigationItem.title = patientToEdit?.namePatient
+                txtFld_elementsName.text = patientToEdit?.namePatient
             } else {
                 self.navigationItem.title = "Nouveau"
             }
         }
         
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        txtFld_elementsName.becomeFirstResponder()
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange,
+                   replacementString string: String) -> Bool {
+        
+        let beforeText: NSString = textField.text!
+        let afterText: NSString = beforeText.stringByReplacingCharactersInRange(range, withString: string)
+        
+        if afterText.length > 0 {
+            doneButton.enabled = true
+        } else {
+            doneButton.enabled = false
+        }
+        
+        return true
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -42,7 +65,14 @@ class AddElementViewController: UIViewController {
     }
     
     func doneAction(){
-        
+        if isPatient {
+            if patientToEdit != nil {
+            } else {
+                PatientManager.sharedInstance.createPatient(txtFld_elementsName.text!, idWatch: "toto", group: nil)
+            }
+            navigationController?.popViewControllerAnimated(true)
+        }
+
     }
     
 
