@@ -9,9 +9,22 @@
 import UIKit
 
 class GroupsListViewController: UITableViewController {
+    
+    var appDelegate: AppDelegate{
+        return UIApplication.sharedApplication().delegate as! AppDelegate
+    }
+    
+    let groupManager = GroupManager()
+    
+    var groups: [Group]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        groupManager.createGroup("toto")
+        groupManager.createGroup("tutu")
+        
+        groups = groupManager.fetchGroups()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,23 +42,25 @@ class GroupsListViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return groups!.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let groupCell = groups![indexPath.row]
+        let cell = tableView.dequeueReusableCellWithIdentifier("GroupCell")
+        cell?.textLabel?.text = groupCell.nameGroup
 
         // Configure the cell...
 
-        return cell
+        return cell!
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
