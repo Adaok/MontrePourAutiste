@@ -11,6 +11,8 @@ import CoreData
 
 class ImageManager: NSObject {
     
+    static let sharedInstance = ImageManager()
+    
     var appDelegate: AppDelegate{
         return UIApplication.sharedApplication().delegate as! AppDelegate
     }

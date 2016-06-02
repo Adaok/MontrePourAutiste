@@ -11,6 +11,8 @@ import CoreData
 
 class PlanningManager: NSObject {
     
+    static let sharedInstance = PlanningManager()
+    
     var appDelegate: AppDelegate{
         return UIApplication.sharedApplication().delegate as! AppDelegate
     }
