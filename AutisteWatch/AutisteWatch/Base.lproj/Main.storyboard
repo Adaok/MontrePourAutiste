@@ -788,9 +788,9 @@
         <image name="Patient" width="17" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Tmq-co-uJY"/>
-        <segue reference="I9W-Z1-rvl"/>
-        <segue reference="nFd-F5-0aa"/>
         <segue reference="GKy-Bb-NTL"/>
+        <segue reference="jlg-tL-Sqm"/>
+        <segue reference="Kk0-z3-Akq"/>
+        <segue reference="nFd-F5-0aa"/>
     </inferredMetricsTieBreakers>
 </document>
