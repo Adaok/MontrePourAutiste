@@ -7,7 +7,36 @@
 //
 
 import UIKit
+import CoreData
 
 class ImageManager: NSObject {
+    
+    var appDelegate: AppDelegate{
+        return UIApplication.sharedApplication().delegate as! AppDelegate
+    }
+    
+    var managedObjectContext: NSManagedObjectContext{
+        return appDelegate.managedObjectContext
+    }
+    
+    func createImage(nameImage: String, pathImage: String)->Image{
+        let entity = NSEntityDescription.entityForName("Image", inManagedObjectContext: managedObjectContext)
+        let image = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedObjectContext) as! Image
+        image.nameImage = nameImage
+        image.pathImage = pathImage
+        return image
+    }
+    
+    func fetchImages()->[Image]?{
+        let fetchRequest=NSFetchRequest(entityName: "Image")
+        do {
+            let result = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Image]
+            return result
+        } catch let error as NSError {
+            print("Could not fetch Activities : \(error)")
+        }
+        
+        return [Image]()
+    }
 
 }

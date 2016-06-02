@@ -154,7 +154,6 @@
 				73BD3EA61CFE2977005C080D /* ViewController.swift */,
 				73BD3EA81CFE2977005C080D /* Main.storyboard */,
 				73BD3EAE1CFE2977005C080D /* Assets.xcassets */,
-				73BD3EB01CFE2977005C080D /* LaunchScreen.storyboard */,
 				73BD3EB31CFE2977005C080D /* Info.plist */,
 				73BD3EAB1CFE2977005C080D /* AutisteWatch.xcdatamodeld */,
 			);
@@ -191,6 +190,7 @@
 				73BD3EDB1CFE2F23005C080D /* Planning.swift */,
 				73BD3EDC1CFE2F23005C080D /* Group+CoreDataProperties.swift */,
 				73BD3EDD1CFE2F23005C080D /* Group.swift */,
+				73BD3EB01CFE2977005C080D /* LaunchScreen.storyboard */,
 				73BD3EDE1CFE2F23005C080D /* Patient+CoreDataProperties.swift */,
 				73BD3EDF1CFE2F23005C080D /* Patient.swift */,
 			);

@@ -7,7 +7,50 @@
 //
 
 import UIKit
+import CoreData
 
 class PatientManager: NSObject {
+    
+    var appDelegate: AppDelegate{
+        return UIApplication.sharedApplication().delegate as! AppDelegate
+    }
+    
+    var managedObjectContext: NSManagedObjectContext{
+        return appDelegate.managedObjectContext
+    }
+    
+    func createPatient(name:String, idWatch:String, group:Group?)->Patient{
+        let entity = NSEntityDescription.entityForName("Patient", inManagedObjectContext: managedObjectContext)
+        let patient = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedObjectContext) as! Patient
+        patient.namePatient = name
+        patient.idPatient = idWatch
+        if group != nil{
+            let groups:NSSet
+            groups = NSSet.init(object: group!)
+            patient.relationGroupPatient = groups
+        }
+        return patient
+    }
+    
+    func fetchPatients()->[Patient]?{
+        let fetchRequest = NSFetchRequest(entityName: "Patient")
+        let sortDescriptor = NSSortDescriptor(key: "namePatient", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        do{
+            let result = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Patient]
+            return result
+        } catch let error as NSError {
+            print("Could not fetch Groups : \(error)")
+        }
+        
+        return [Patient]()
+    }
+    
+    func addGroupsToPatient(patient:Patient, groups: [Group])->Patient{
+        let groupsSelected = NSSet.init(array: groups)
+        patient.relationGroupPatient = groupsSelected
+        return patient
+    }
 
 }
