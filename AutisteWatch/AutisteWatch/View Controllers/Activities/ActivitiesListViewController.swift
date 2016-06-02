@@ -26,10 +26,13 @@ class ActivitiesListViewController: UICollectionViewController {
         // Register cell classes
         self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         addActivityButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(self.addActivityAction))
-        self.tabBarController?.navigationItem.title = "Activities"
-        
         // Do any additional setup after loading the view.
     
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.tabBarController?.navigationItem.setRightBarButtonItem(addActivityButton, animated: true)
+        self.tabBarController?.navigationItem.title = "Activities"
     }
 
     override func didReceiveMemoryWarning() {
