@@ -50,6 +50,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="zXW-dj-kYP" kind="show" identifier="toPlanPatient" id="I9W-Z1-rvl"/>
+                                    <segue destination="5bM-YQ-fDT" kind="show" identifier="toEditPatient" trigger="accessoryAction" id="5lv-Sw-2Wt"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -510,7 +511,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o1B-td-FEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2310" y="1043.25"/>
+            <point key="canvasLocation" x="1802" y="1029"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -814,9 +815,9 @@
         <image name="Patient" width="17" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jlg-tL-Sqm"/>
         <segue reference="GKy-Bb-NTL"/>
-        <segue reference="Kk0-z3-Akq"/>
+        <segue reference="5lv-Sw-2Wt"/>
+        <segue reference="I9W-Z1-rvl"/>
         <segue reference="nFd-F5-0aa"/>
     </inferredMetricsTieBreakers>
 </document>

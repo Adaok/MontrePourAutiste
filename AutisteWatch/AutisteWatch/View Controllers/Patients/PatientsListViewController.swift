@@ -14,13 +14,7 @@ class PatientsListViewController: UITableViewController {
     
     var patients = [Patient]()
     
-    lazy var addPatientButton : UIBarButtonItem = {
-        var button = UIBarButtonItem()
-        button.title = "+"
-        button.target = self
-        button.action = #selector(PatientsListViewController.addPatientItemAction)
-        return button
-    }()
+    var addPatientButton = UIBarButtonItem()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +23,10 @@ class PatientsListViewController: UITableViewController {
         patients = manager.fetchPatients()!
         
         self.clearsSelectionOnViewWillAppear = false
-        print()
-        self.navigationController!.title = "Patients"
-        self.navigationController!.navigationItem.setRightBarButtonItem(addPatientButton, animated: true)
+        
+        addPatientButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add , target: self, action: #selector(PatientsListViewController.addPatientItemAction))
+        self.tabBarController!.title = "Patients"
+        self.tabBarController!.navigationItem.setRightBarButtonItem(addPatientButton, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,13 +86,25 @@ class PatientsListViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == Segues.toAddPatient {
+            let vc = segue.destinationViewController as! AddElementViewController
+            vc.navigationItem.title = "Nouveau"
+            vc.isPatient = true
+        }
+        
+        if segue.identifier == Segues.toEditPatient {
+            
+        }
+        
+        
     }
     
     
     // MARK: - Business
     
     func addPatientItemAction(){
-        
+        performSegueWithIdentifier(Segues.toAddPatient, sender: addPatientButton)
     }
     
     

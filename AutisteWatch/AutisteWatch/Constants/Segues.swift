@@ -10,19 +10,23 @@ import Foundation
 
 struct Segues {
     // MARK: - Activities Tab
-    let toAddActivity = "toAddActivity"
-    let toEditActivity = "toEditActivity"
+    static let toAddActivity = "toAddActivity"
+    static let toEditActivity = "toEditActivity"
     
     // MARK: - Groups Tab
-    let toPlanGroup = "toPlanGroup"
-    let toAddGroup = "toAddGroup"
+    static let toPlanGroup = "toPlanGroup"
+    static let toAddGroup = "toAddGroup"
     
     // MARK: - Patients Tab
-    let toPlanPatient = "toPlanPatient"
-    let toAddPatient = "toAddPatient"
+    static let toPlanPatient = "toPlanPatient"
+    static let toAddPatient = "toAddPatient"
+    static let toEditPatient = "toEditPatient"
     
     // MARK: - Multiple Tabs
-    let toPlanning = "toPlanning"
-    let toAddPlannedActivity = "toAddPlannedActivity"
-    let toEditPlannedActivity = "toEditPlannedAcitvity"
+    static let toPlanning = "toPlanning"
+    static let toAddPlannedActivity = "toAddPlannedActivity"
+    static let toEditPlannedActivity = "toEditPlannedAcitvity"
+    
+
 }
+

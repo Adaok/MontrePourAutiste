@@ -9,16 +9,30 @@
 import UIKit
 
 class AddElementViewController: UIViewController {
-
+    
+    var patientToAdd : Patient?
+    var groupToAdd : Group?
+    var isPatient : Bool = false
+    var isGroup : Bool = false
+    
+    var donebutton = UIBarButtonItem()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        donebutton = UIBarButtonItem(barButtonSystemItem: .Done , target: self, action: #selector(self.doneAction))
+        donebutton.enabled = false
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func doneAction(){
+        
     }
     
 
