@@ -20,7 +20,7 @@ class ActivitiesListViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+        self.navigationController?.navigationItem.title = "Activities"
         // Do any additional setup after loading the view.
     }
 
