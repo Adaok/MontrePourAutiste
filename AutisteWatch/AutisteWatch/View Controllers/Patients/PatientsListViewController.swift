@@ -19,9 +19,6 @@ class PatientsListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        manager.createPatient("Jean-Eude", idWatch: "toto", group: nil)
-        patients = manager.fetchPatients()!
-        
         self.clearsSelectionOnViewWillAppear = false
         
         addPatientButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add , target: self, action: #selector(PatientsListViewController.addPatientItemAction))
@@ -29,6 +26,8 @@ class PatientsListViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        
+        patients = manager.fetchPatients()!
         self.tabBarController!.title = "Patients"
         self.tabBarController!.navigationItem.setRightBarButtonItem(addPatientButton, animated: true)
     }
@@ -59,6 +58,7 @@ class PatientsListViewController: UITableViewController {
         if editingStyle == .Delete {
             // Delete the row from the data source
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
         }
     }
 
@@ -93,12 +93,13 @@ class PatientsListViewController: UITableViewController {
         
         if segue.identifier == Segues.toAddPatient {
             let vc = segue.destinationViewController as! AddElementViewController
-            vc.navigationItem.title = "Nouveau"
+             vc.isPatient = true
+        } else if segue.identifier == Segues.toEditPatient {
+            let vc = segue.destinationViewController as! AddElementViewController
+            let index = tableView.indexPathForCell(sender as! UITableViewCell)
+            let patient = patients[index!.row]
+            vc.patientToEdit = patient
             vc.isPatient = true
-        }
-        
-        if segue.identifier == Segues.toEditPatient {
-            
         }
         
         

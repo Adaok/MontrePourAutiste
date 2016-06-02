@@ -10,8 +10,8 @@ import UIKit
 
 class AddElementViewController: UIViewController {
     
-    var patientToAdd : Patient?
-    var groupToAdd : Group?
+    var patientToEdit : Patient?
+    var groupToEdit : Group?
     var isPatient : Bool = false
     var isGroup : Bool = false
     
@@ -23,6 +23,15 @@ class AddElementViewController: UIViewController {
         donebutton = UIBarButtonItem(barButtonSystemItem: .Done , target: self, action: #selector(self.doneAction))
         donebutton.enabled = false
         
+        self.navigationItem.setRightBarButtonItem(donebutton, animated: true)
+        
+        if isPatient {
+            if patientToEdit != nil {
+                self.navigationItem.title = patientToEdit?.namePatient
+            } else {
+                self.navigationItem.title = "Nouveau"
+            }
+        }
         
     }
 
