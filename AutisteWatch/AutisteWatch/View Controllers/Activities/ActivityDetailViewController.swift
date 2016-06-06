@@ -16,11 +16,23 @@ class ActivityDetailViewController: UIViewController {
     var activityImage: UIImage!
     var activityName: String!
     
+    var activityToEdit: Activity?
+    
+    let im: ImageManager = ImageManager.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         imgVw_activityImg.image = activityImage
         txtFld_activityName.placeholder = activityName
+        
+        if activityToEdit != nil {
+            self.imgVw_activityImg.image = UIImage(named: (im.fetchImageById(activityToEdit!.idImage!)!).nameImage!)
+            self.txtFld_activityName.placeholder = activityToEdit!.nameActivity
+        } else {
+            self.imgVw_activityImg.image = UIImage(named: "No Activity")
+            self.txtFld_activityName.placeholder = "Veuillez entrer le nom de l'activité"
+        }
         // Do any additional setup after loading the view.
     }
 

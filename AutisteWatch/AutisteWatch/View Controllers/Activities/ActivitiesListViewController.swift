@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 private let reuseIdentifier = "oneActivity"
 
 class ActivitiesListViewController: UICollectionViewController {
@@ -15,7 +16,10 @@ class ActivitiesListViewController: UICollectionViewController {
     var backButton: UIBarButtonItem?
     
     var activities: [Activity]?
+    var images: [Image]?
     
+    let am: ActivityManager = ActivityManager.sharedInstance
+    let im: ImageManager = ImageManager.sharedInstance
     
     // MARK - Lyfecycle
     override func viewDidLoad() {
@@ -35,6 +39,8 @@ class ActivitiesListViewController: UICollectionViewController {
     override func viewWillAppear(animated: Bool) {
         self.tabBarController?.navigationItem.setRightBarButtonItem(addActivityButton, animated: true)
         self.tabBarController?.navigationItem.title = "Activities"
+        activities = am.fetchActivities()
+        images = im.fetchImages()
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,19 +69,20 @@ class ActivitiesListViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
 //        return activities!.count
-        return 2
+        if activities != nil {
+            return (activities?.count)!
+        } else {
+            return 0
+        }
         
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! ActivityViewCell
         
-        if indexPath.row == 0 {
-            cell.imgVw_activityImage.image = UIImage(named: "Bed")
-            cell.lbl_activityName.text = "Bed"
-        } else {
-            cell.imgVw_activityImage.image = UIImage(named: "Eat")
-            cell.lbl_activityName.text = "Eat"
+        if activities != nil {
+            cell.imgVw_activityImage.image = UIImage(contentsOfFile: images![indexPath.row].pathImage!)
+            cell.lbl_activityName.text = activities![indexPath.row].nameActivity
         }
         // Configure the cell
     
@@ -85,6 +92,7 @@ class ActivitiesListViewController: UICollectionViewController {
     // MARK: Actions
     
     func addActivityAction() {
+        performSegueWithIdentifier(Segues.toAddActivity, sender: self)
         
     }
     

@@ -464,7 +464,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = "LP-BG-IEM";
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					73BD3EA01CFE2976005C080D = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -759,7 +759,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AutisteWatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "LPBG-IEM.AutisteWatch";
+				PRODUCT_BUNDLE_IDENTIFIER = fr.IEM.AutisteWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -773,7 +773,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AutisteWatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "LPBG-IEM.AutisteWatch";
+				PRODUCT_BUNDLE_IDENTIFIER = fr.IEM.AutisteWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -837,7 +837,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = WatchAutiste_Extension;
 				INFOPLIST_FILE = WatchAutiste/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = "LPBG-IEM.AutisteWatch.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = fr.IEM.AutisteWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -856,7 +856,7 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = WatchAutiste_Extension;
 				INFOPLIST_FILE = WatchAutiste/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = "LPBG-IEM.AutisteWatch.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = fr.IEM.AutisteWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -873,7 +873,7 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "WatchAutiste Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "LPBG-IEM.AutisteWatch.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = fr.IEM.AutisteWatch.watchkitapp.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
@@ -891,7 +891,7 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "WatchAutiste Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "LPBG-IEM.AutisteWatch.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = fr.IEM.AutisteWatch.watchkitapp.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;

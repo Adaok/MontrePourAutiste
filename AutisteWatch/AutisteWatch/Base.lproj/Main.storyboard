@@ -425,10 +425,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WatchCell" id="QRi-TU-g0o">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ElementCell" id="QRi-TU-g0o">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QRi-TU-g0o" id="LTF-ie-hcS">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" tableViewCell="QRi-TU-g0o" id="LTF-ie-hcS">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -448,13 +448,13 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0W-nv-r6e">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0W-nv-r6e">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="96" y="37" width="42" height="21"/>
+                                                        <rect key="frame" x="96" y="37" width="72" height="21"/>
                                                     </variation>
                                                 </label>
                                             </subviews>
@@ -767,7 +767,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="foO-4a-oFw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="No Activity" translatesAutoresizingMaskIntoConstraints="NO" id="foO-4a-oFw">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="132" id="55G-Xb-2It"/>
@@ -827,6 +827,7 @@
                             <constraint firstAttribute="leadingMargin" secondItem="Iq5-np-rnZ" secondAttribute="leading" id="AVR-mE-zyz"/>
                             <constraint firstItem="mwX-Lt-e9h" firstAttribute="centerY" secondItem="hUV-m3-OdC" secondAttribute="centerY" id="BjT-8B-DyP"/>
                             <constraint firstItem="j9J-42-8gd" firstAttribute="width" secondItem="ZjK-OX-pdq" secondAttribute="width" id="DFx-9E-PjS"/>
+                            <constraint firstItem="sb2-sM-hyy" firstAttribute="top" secondItem="69f-Pw-WBN" secondAttribute="bottom" constant="83" id="Fsc-0C-lxW"/>
                             <constraint firstItem="69f-Pw-WBN" firstAttribute="top" secondItem="mwX-Lt-e9h" secondAttribute="bottom" constant="52" id="J2D-oO-k0u"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BTV-pL-euY" secondAttribute="trailing" id="KDd-RU-Pzw"/>
                             <constraint firstItem="BTV-pL-euY" firstAttribute="top" secondItem="foO-4a-oFw" secondAttribute="bottom" constant="8" id="Pss-SN-FDV"/>
@@ -848,22 +849,23 @@
                                 <exclude reference="hUV-m3-OdC"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="1QO-qO-Xem"/>
+                                <exclude reference="alN-rn-cEk"/>
                                 <exclude reference="7Rp-nj-X40"/>
                                 <exclude reference="KDd-RU-Pzw"/>
                                 <exclude reference="Pss-SN-FDV"/>
-                                <exclude reference="J2D-oO-k0u"/>
-                                <exclude reference="uJx-wz-ZxD"/>
-                                <exclude reference="3WP-JT-nci"/>
-                                <exclude reference="fb6-sj-5sm"/>
                                 <exclude reference="AVR-mE-zyz"/>
                                 <exclude reference="g3i-7z-7cG"/>
-                                <exclude reference="BjT-8B-DyP"/>
-                                <exclude reference="fZo-Ay-le3"/>
-                                <exclude reference="1QO-qO-Xem"/>
-                                <exclude reference="alN-rn-cEk"/>
                                 <exclude reference="8E9-fi-4Ax"/>
                                 <exclude reference="DFx-9E-PjS"/>
                                 <exclude reference="hM2-v7-W2v"/>
+                                <exclude reference="3WP-JT-nci"/>
+                                <exclude reference="fb6-sj-5sm"/>
+                                <exclude reference="BjT-8B-DyP"/>
+                                <exclude reference="fZo-Ay-le3"/>
+                                <exclude reference="J2D-oO-k0u"/>
+                                <exclude reference="uJx-wz-ZxD"/>
+                                <exclude reference="Fsc-0C-lxW"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -877,22 +879,23 @@
                                 <include reference="hUV-m3-OdC"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="1QO-qO-Xem"/>
+                                <include reference="alN-rn-cEk"/>
                                 <include reference="7Rp-nj-X40"/>
                                 <include reference="KDd-RU-Pzw"/>
                                 <include reference="Pss-SN-FDV"/>
-                                <include reference="J2D-oO-k0u"/>
-                                <include reference="uJx-wz-ZxD"/>
-                                <include reference="3WP-JT-nci"/>
-                                <include reference="fb6-sj-5sm"/>
                                 <include reference="AVR-mE-zyz"/>
                                 <include reference="g3i-7z-7cG"/>
-                                <include reference="BjT-8B-DyP"/>
-                                <include reference="fZo-Ay-le3"/>
-                                <include reference="1QO-qO-Xem"/>
-                                <include reference="alN-rn-cEk"/>
                                 <include reference="8E9-fi-4Ax"/>
                                 <include reference="DFx-9E-PjS"/>
                                 <include reference="hM2-v7-W2v"/>
+                                <include reference="3WP-JT-nci"/>
+                                <include reference="fb6-sj-5sm"/>
+                                <include reference="BjT-8B-DyP"/>
+                                <include reference="fZo-Ay-le3"/>
+                                <include reference="J2D-oO-k0u"/>
+                                <include reference="uJx-wz-ZxD"/>
+                                <include reference="Fsc-0C-lxW"/>
                             </mask>
                         </variation>
                     </view>
@@ -910,6 +913,7 @@
         <image name="Activity" width="17" height="17"/>
         <image name="Bed" width="173" height="173"/>
         <image name="Group" width="17" height="17"/>
+        <image name="No Activity" width="171" height="171"/>
         <image name="Patient" width="17" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>

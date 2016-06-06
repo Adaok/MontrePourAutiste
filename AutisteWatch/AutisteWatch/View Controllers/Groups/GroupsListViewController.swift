@@ -9,11 +9,10 @@
 import UIKit
 
 class GroupsListViewController: UITableViewController, AddElementOfTypeGroupViewControllerDelegate {
+    var addGroupButton:UIBarButtonItem?
     
     let groupManager = GroupManager.sharedInstance
-    
-    var addGroupButton = UIBarButtonItem()
-            
+
     var groups = [Group]()
     
     func sortGroups(){
@@ -22,11 +21,12 @@ class GroupsListViewController: UITableViewController, AddElementOfTypeGroupView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        groups = groupManager.fetchGroups()!
         addGroupButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(self.addGroupItemAction))
         groups = groupManager.fetchGroups()!
             
         self.clearsSelectionOnViewWillAppear = false
-        
+        addGroupButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(GroupsListViewController.addGroupItemAction))
     }
     
     override func viewWillAppear(animated: Bool) {
