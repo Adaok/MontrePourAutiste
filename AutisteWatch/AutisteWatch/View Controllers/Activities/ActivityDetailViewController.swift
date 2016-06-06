@@ -10,9 +10,17 @@ import UIKit
 
 class ActivityDetailViewController: UIViewController {
 
+    @IBOutlet weak var imgVw_activityImg: UIImageView!
+    @IBOutlet weak var txtFld_activityName: UITextField!
+    
+    var activityImage: UIImage!
+    var activityName: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        imgVw_activityImg.image = activityImage
+        txtFld_activityName.placeholder = activityName
         // Do any additional setup after loading the view.
     }
 

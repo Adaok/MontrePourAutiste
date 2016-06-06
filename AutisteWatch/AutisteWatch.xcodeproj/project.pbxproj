@@ -29,6 +29,14 @@
 		73BD3EF01CFE2FEA005C080D /* PlanningManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD3EEF1CFE2FEA005C080D /* PlanningManager.swift */; };
 		73BD3EF21CFE3001005C080D /* GroupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD3EF11CFE3001005C080D /* GroupManager.swift */; };
 		73BD3EF41CFE3024005C080D /* PatientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BD3EF31CFE3024005C080D /* PatientManager.swift */; };
+		B803181E1D001E90007F4458 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B803181C1D001E90007F4458 /* Interface.storyboard */; };
+		B80318201D001E90007F4458 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B803181F1D001E90007F4458 /* Assets.xcassets */; };
+		B80318271D001E90007F4458 /* WatchAutiste Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B80318261D001E90007F4458 /* WatchAutiste Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B803182E1D001E90007F4458 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803182D1D001E90007F4458 /* InterfaceController.swift */; };
+		B80318301D001E90007F4458 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803182F1D001E90007F4458 /* ExtensionDelegate.swift */; };
+		B80318321D001E90007F4458 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80318311D001E90007F4458 /* NotificationController.swift */; };
+		B80318341D001E90007F4458 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B80318331D001E90007F4458 /* Assets.xcassets */; };
+		B80318381D001E90007F4458 /* WatchAutiste.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B803181A1D001E8F007F4458 /* WatchAutiste.app */; };
 		B8E9E18F1CFF0DC200B70923 /* ActivitiesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9E18E1CFF0DC200B70923 /* ActivitiesListViewController.swift */; };
 		B8E9E1911CFF0DD600B70923 /* GroupsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9E1901CFF0DD600B70923 /* GroupsListViewController.swift */; };
 		B8E9E1931CFF0DE500B70923 /* PatientsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9E1921CFF0DE500B70923 /* PatientsListViewController.swift */; };
@@ -56,7 +64,46 @@
 			remoteGlobalIDString = 73BD3EA01CFE2976005C080D;
 			remoteInfo = AutisteWatch;
 		};
+		B80318281D001E90007F4458 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73BD3E991CFE2976005C080D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B80318251D001E90007F4458;
+			remoteInfo = "WatchAutiste Extension";
+		};
+		B80318361D001E90007F4458 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73BD3E991CFE2976005C080D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B80318191D001E8F007F4458;
+			remoteInfo = WatchAutiste;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B803183E1D001E90007F4458 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B80318271D001E90007F4458 /* WatchAutiste Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B80318401D001E90007F4458 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				B80318381D001E90007F4458 /* WatchAutiste.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		73BD3EA11CFE2977005C080D /* AutisteWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutisteWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +134,17 @@
 		73BD3EEF1CFE2FEA005C080D /* PlanningManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlanningManager.swift; path = Database/Manager/PlanningManager.swift; sourceTree = "<group>"; };
 		73BD3EF11CFE3001005C080D /* GroupManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupManager.swift; path = Database/Manager/GroupManager.swift; sourceTree = "<group>"; };
 		73BD3EF31CFE3024005C080D /* PatientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatientManager.swift; path = Database/Manager/PatientManager.swift; sourceTree = "<group>"; };
+		B803181A1D001E8F007F4458 /* WatchAutiste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchAutiste.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B803181D1D001E90007F4458 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		B803181F1D001E90007F4458 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B80318211D001E90007F4458 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B80318261D001E90007F4458 /* WatchAutiste Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WatchAutiste Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B803182C1D001E90007F4458 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		B803182D1D001E90007F4458 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		B803182F1D001E90007F4458 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		B80318311D001E90007F4458 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		B80318331D001E90007F4458 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B80318351D001E90007F4458 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8E9E18E1CFF0DC200B70923 /* ActivitiesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesListViewController.swift; sourceTree = "<group>"; };
 		B8E9E1901CFF0DD600B70923 /* GroupsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsListViewController.swift; sourceTree = "<group>"; };
 		B8E9E1921CFF0DE500B70923 /* PatientsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientsListViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +179,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B80318231D001E90007F4458 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -130,6 +195,8 @@
 				73BD3EA31CFE2977005C080D /* AutisteWatch */,
 				73BD3EBB1CFE2977005C080D /* AutisteWatchTests */,
 				73BD3EC61CFE2977005C080D /* AutisteWatchUITests */,
+				B803181B1D001E90007F4458 /* WatchAutiste */,
+				B803182A1D001E90007F4458 /* WatchAutiste Extension */,
 				73BD3EA21CFE2977005C080D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -140,6 +207,8 @@
 				73BD3EA11CFE2977005C080D /* AutisteWatch.app */,
 				73BD3EB81CFE2977005C080D /* AutisteWatchTests.xctest */,
 				73BD3EC31CFE2977005C080D /* AutisteWatchUITests.xctest */,
+				B803181A1D001E8F007F4458 /* WatchAutiste.app */,
+				B80318261D001E90007F4458 /* WatchAutiste Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -208,6 +277,37 @@
 			name = Manager;
 			sourceTree = "<group>";
 		};
+		B803181B1D001E90007F4458 /* WatchAutiste */ = {
+			isa = PBXGroup;
+			children = (
+				B803181C1D001E90007F4458 /* Interface.storyboard */,
+				B803181F1D001E90007F4458 /* Assets.xcassets */,
+				B80318211D001E90007F4458 /* Info.plist */,
+			);
+			path = WatchAutiste;
+			sourceTree = "<group>";
+		};
+		B803182A1D001E90007F4458 /* WatchAutiste Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B803182D1D001E90007F4458 /* InterfaceController.swift */,
+				B803182F1D001E90007F4458 /* ExtensionDelegate.swift */,
+				B80318311D001E90007F4458 /* NotificationController.swift */,
+				B80318331D001E90007F4458 /* Assets.xcassets */,
+				B80318351D001E90007F4458 /* Info.plist */,
+				B803182B1D001E90007F4458 /* Supporting Files */,
+			);
+			path = "WatchAutiste Extension";
+			sourceTree = "<group>";
+		};
+		B803182B1D001E90007F4458 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B803182C1D001E90007F4458 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		B8E9E18A1CFF0D1400B70923 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,10 +374,12 @@
 				73BD3E9D1CFE2976005C080D /* Sources */,
 				73BD3E9E1CFE2976005C080D /* Frameworks */,
 				73BD3E9F1CFE2976005C080D /* Resources */,
+				B80318401D001E90007F4458 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B80318371D001E90007F4458 /* PBXTargetDependency */,
 			);
 			name = AutisteWatch;
 			productName = AutisteWatch;
@@ -320,13 +422,47 @@
 			productReference = 73BD3EC31CFE2977005C080D /* AutisteWatchUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		B80318191D001E8F007F4458 /* WatchAutiste */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B803183F1D001E90007F4458 /* Build configuration list for PBXNativeTarget "WatchAutiste" */;
+			buildPhases = (
+				B80318181D001E8F007F4458 /* Resources */,
+				B803183E1D001E90007F4458 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B80318291D001E90007F4458 /* PBXTargetDependency */,
+			);
+			name = WatchAutiste;
+			productName = WatchAutiste;
+			productReference = B803181A1D001E8F007F4458 /* WatchAutiste.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		B80318251D001E90007F4458 /* WatchAutiste Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B803183D1D001E90007F4458 /* Build configuration list for PBXNativeTarget "WatchAutiste Extension" */;
+			buildPhases = (
+				B80318221D001E90007F4458 /* Sources */,
+				B80318231D001E90007F4458 /* Frameworks */,
+				B80318241D001E90007F4458 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WatchAutiste Extension";
+			productName = "WatchAutiste Extension";
+			productReference = B80318261D001E90007F4458 /* WatchAutiste Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		73BD3E991CFE2976005C080D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "LP-BG-IEM";
 				TargetAttributes = {
@@ -341,6 +477,14 @@
 					73BD3EC21CFE2977005C080D = {
 						CreatedOnToolsVersion = 7.2.1;
 						TestTargetID = 73BD3EA01CFE2976005C080D;
+					};
+					B80318191D001E8F007F4458 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 7L6YT6RXSD;
+					};
+					B80318251D001E90007F4458 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 4F745CT9HK;
 					};
 				};
 			};
@@ -360,6 +504,8 @@
 				73BD3EA01CFE2976005C080D /* AutisteWatch */,
 				73BD3EB71CFE2977005C080D /* AutisteWatchTests */,
 				73BD3EC21CFE2977005C080D /* AutisteWatchUITests */,
+				B80318191D001E8F007F4458 /* WatchAutiste */,
+				B80318251D001E90007F4458 /* WatchAutiste Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -386,6 +532,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B80318181D001E8F007F4458 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B80318201D001E90007F4458 /* Assets.xcassets in Resources */,
+				B803181E1D001E90007F4458 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B80318241D001E90007F4458 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B80318341D001E90007F4458 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +605,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B80318221D001E90007F4458 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B80318321D001E90007F4458 /* NotificationController.swift in Sources */,
+				B80318301D001E90007F4458 /* ExtensionDelegate.swift in Sources */,
+				B803182E1D001E90007F4458 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -454,6 +627,16 @@
 			isa = PBXTargetDependency;
 			target = 73BD3EA01CFE2976005C080D /* AutisteWatch */;
 			targetProxy = 73BD3EC41CFE2977005C080D /* PBXContainerItemProxy */;
+		};
+		B80318291D001E90007F4458 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B80318251D001E90007F4458 /* WatchAutiste Extension */;
+			targetProxy = B80318281D001E90007F4458 /* PBXContainerItemProxy */;
+		};
+		B80318371D001E90007F4458 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B80318191D001E8F007F4458 /* WatchAutiste */;
+			targetProxy = B80318361D001E90007F4458 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -472,6 +655,14 @@
 				73BD3EB11CFE2977005C080D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B803181C1D001E90007F4458 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B803181D1D001E90007F4458 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -636,6 +827,74 @@
 			};
 			name = Release;
 		};
+		B80318391D001E90007F4458 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = WatchAutiste_Extension;
+				INFOPLIST_FILE = WatchAutiste/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "LPBG-IEM.AutisteWatch.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		B803183A1D001E90007F4458 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = WatchAutiste_Extension;
+				INFOPLIST_FILE = WatchAutiste/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "LPBG-IEM.AutisteWatch.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		B803183B1D001E90007F4458 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = "WatchAutiste Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "LPBG-IEM.AutisteWatch.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		B803183C1D001E90007F4458 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				INFOPLIST_FILE = "WatchAutiste Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "LPBG-IEM.AutisteWatch.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -674,6 +933,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		B803183D1D001E90007F4458 /* Build configuration list for PBXNativeTarget "WatchAutiste Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B803183B1D001E90007F4458 /* Debug */,
+				B803183C1D001E90007F4458 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B803183F1D001E90007F4458 /* Build configuration list for PBXNativeTarget "WatchAutiste" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B80318391D001E90007F4458 /* Debug */,
+				B803183A1D001E90007F4458 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
