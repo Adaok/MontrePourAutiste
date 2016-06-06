@@ -24,14 +24,6 @@ class GroupsListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addGroupButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(self.addGroupAction))
-        
-        
-<<<<<<< HEAD
-=======
-        groupManager.createGroup("toto",patients: nil)
-        groupManager.createGroup("tutu",patients: nil)
->>>>>>> feature/updateManager
-        
         groups = groupManager.fetchGroups()
 
         // Uncomment the following line to preserve selection between presentations
