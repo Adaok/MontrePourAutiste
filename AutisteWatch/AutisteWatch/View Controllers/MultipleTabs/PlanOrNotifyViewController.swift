@@ -8,10 +8,37 @@
 
 import UIKit
 
+// MARK: - Delegate
+
+protocol ManagementGroupViewControllerDelegate : class {
+    func managePlanningOfTypeGroupViewController(controller: PlanOrNotifyViewController, didDisplayingGroup group: Group)
+    func manageNotificationOfTypeGroupViewController(controller: PlanOrNotifyViewController, didNotifyGroup group: Group)
+}
+
+protocol ManagementPatientViewControllerDelegate : class {
+    func managePlanningOfTypePatientViewController(controller: PlanOrNotifyViewController, didDiplayingPatient patient: Patient)
+    func manageNotificationOfTypePatientViewController(controller: PlanOrNotifyViewController, didNotifyPatient patient: Patient)
+}
+
+// MARK: - Class
+
 class PlanOrNotifyViewController: UIViewController {
+    
+    var patientToManage : Patient?
+    var groupToManage : Group?
+    var isPatient : Bool = false
+    var isGroup : Bool = false
+    var patientDelegate : ManagementPatientViewControllerDelegate?
+    var groupDelegate : ManagementGroupViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if isPatient {
+            self.navigationItem.title = "Gérer le groupe"
+        } else if isGroup {
+            self.navigationItem.title = "Gérer \(patientToManage!.namePatient)"
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -21,6 +48,15 @@ class PlanOrNotifyViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Buttons Actions
+    
+    func planningAction(){
+        
+    }
+    
+    func notifyAction(){
+        
+    }
 
     /*
     // MARK: - Navigation
