@@ -9,18 +9,10 @@
 import UIKit
 
 class GroupsListViewController: UITableViewController, AddElementOfTypeGroupViewControllerDelegate {
-    
-<<<<<<< HEAD
     var addGroupButton:UIBarButtonItem?
     
     let groupManager = GroupManager.sharedInstance
-=======
-    var groupManager = GroupManager.sharedInstance
-    
-    var addGroupButton = UIBarButtonItem()
-            
     var groups = [Group]()
->>>>>>> c459a265767d9e3211e858b0daa629dd43b35d96
     
     func sortGroups(){
         groups.sortInPlace({ $0.nameGroup < $1.nameGroup})
@@ -28,15 +20,11 @@ class GroupsListViewController: UITableViewController, AddElementOfTypeGroupView
 
     override func viewDidLoad() {
         super.viewDidLoad()
-<<<<<<< HEAD
-        addGroupButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(self.addGroupAction))
-        groups = groupManager.fetchGroups()
+        groups = groupManager.fetchGroups()!
         
-=======
         groups = groupManager.fetchGroups()!
         self.clearsSelectionOnViewWillAppear = false
         addGroupButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(GroupsListViewController.addGroupItemAction))
->>>>>>> c459a265767d9e3211e858b0daa629dd43b35d96
     }
     
     override func viewWillAppear(animated: Bool) {

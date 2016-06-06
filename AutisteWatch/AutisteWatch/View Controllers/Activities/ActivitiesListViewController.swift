@@ -69,7 +69,11 @@ class ActivitiesListViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
 //        return activities!.count
-        return 2
+        if activities != nil {
+            return (activities?.count)!
+        } else {
+            return 0
+        }
         
     }
 
@@ -88,6 +92,7 @@ class ActivitiesListViewController: UICollectionViewController {
     // MARK: Actions
     
     func addActivityAction() {
+        performSegueWithIdentifier(Segues.toAddActivity, sender: self)
         
     }
     

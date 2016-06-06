@@ -29,6 +29,21 @@ class ImageManager: NSObject {
         return image
     }
     
+    func fetchImageById(idImage: NSNumber) -> Image?{
+        let fetchRequest=NSFetchRequest(entityName: "Image")
+        let predicate = NSPredicate(format:"idImage like %@" , idImage)
+        fetchRequest.predicate = predicate
+        do {
+            let result = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Image]
+            return result[0]
+        } catch let error as NSError {
+            print("Could not fetch Images : \(error)")
+        }
+        
+        return Image()
+        
+    }
+    
     func fetchImages()->[Image]?{
         let fetchRequest=NSFetchRequest(entityName: "Image")
         do {
