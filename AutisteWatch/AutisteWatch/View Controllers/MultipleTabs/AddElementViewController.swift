@@ -49,6 +49,13 @@ class AddElementViewController: UIViewController , UITextFieldDelegate {
             } else {
                 self.navigationItem.title = "Nouveau"
             }
+        } else if isGroup {
+            if groupToEdit != nil {
+                self.navigationItem.title = groupToEdit?.nameGroup
+                txtFld_elementsName.text = groupToEdit?.nameGroup
+            } else {
+                self.navigationItem.title = "Nouveau"
+            }
         }
         
     }
@@ -88,7 +95,18 @@ class AddElementViewController: UIViewController , UITextFieldDelegate {
                 let patient = PatientManager.sharedInstance.createPatient(txtFld_elementsName.text!, idWatch: "", group: nil)
                 patientDelegate?.addElementOfTypePatientViewController(self, didFinishAddingItem: patient)
             }
+        } else if isGroup {
+            if groupToEdit != nil {
+                groupToEdit?.nameGroup = txtFld_elementsName.text
+                groupDelegate?.editElementOfTypeGroupViewController(self, didFinishEditingItem: groupToEdit!)
+            } else {
+                let group = GroupManager.sharedInstance.createGroup(txtFld_elementsName.text!, patients: nil)
+                groupDelegate?.addElementOfTypeGroupViewController(self, didFinishAddingItem: group)
+            }
         }
+
+        
+        
 
     }
     

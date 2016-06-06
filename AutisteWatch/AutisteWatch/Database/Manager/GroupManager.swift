@@ -30,6 +30,13 @@ class GroupManager: NSObject {
             patientsToAdd = NSSet.init(array: patients!)
             group.relationPatientGroup = patientsToAdd
         }
+        
+        do {
+            try self.managedObjectContext.save()
+        } catch let error as NSError {
+            print("Could not save group : \(error)")
+        }
+        
         return group
     }
     
@@ -54,10 +61,8 @@ class GroupManager: NSObject {
         return group
     }
     
-    func deleteGroups(groups:[Group]){
-        for var group:Group in groups{
-            self.managedObjectContext.deleteObject(group)
-        }
+    func deleteGroup(group: Group){
+        self.managedObjectContext.deleteObject(group)
         do {
             try self.managedObjectContext.save()
         } catch let error as NSError {
