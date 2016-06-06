@@ -44,7 +44,7 @@ class PlanningManager: NSObject {
     
     func fetchPlanningsByPatient(patient: Patient)->[Planning]?{
         let fetchPatientRequest = NSFetchRequest(entityName: "Planning")
-        let predicate = NSPredicate(format: patient.idPatient!, argumentArray: nil)
+        let predicate = NSPredicate(format:"idPatient like %@" , patient.idPatient!)
         fetchPatientRequest.predicate = predicate
         
         do {
