@@ -53,4 +53,15 @@ class GroupManager: NSObject {
         group.relationPatientGroup = patientsSelected
         return group
     }
+    
+    func deleteGroups(groups:[Group]){
+        for var group:Group in groups{
+            self.managedObjectContext.deleteObject(group)
+        }
+        do {
+            try self.managedObjectContext.save()
+        } catch let error as NSError {
+            print("Could not delete Group : \(error)")
+        }
+    }
 }

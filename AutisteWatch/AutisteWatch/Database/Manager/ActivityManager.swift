@@ -47,19 +47,15 @@ class ActivityManager: NSObject {
         return [Activity]()
     }
     
-    func fetchActivitiesByPatient(patient: Patient)->[Activity]?{
-        let fetchPatientRequest = NSFetchRequest(entityName: "Activity")
-        let predicate = NSPredicate(format: patient.idPatient!, argumentArray: nil)
-        fetchPatientRequest.predicate = predicate
-        
-        do {
-            let result = try managedObjectContext.executeFetchRequest(fetchPatientRequest) as! [Activity]
-            return result
-        } catch let error as NSError {
-            print("Could not fetch Activities : \(error)")
+    func deleteActivities(activities:[Activity]){
+        for var activity:Activity in activities{
+            self.managedObjectContext.deleteObject(activity)
         }
-        
-        return [Activity]()
+        do {
+            try self.managedObjectContext.save()
+        } catch let error as NSError {
+            print("Could not delete Activity : \(error)")
+        }
     }
 
 }

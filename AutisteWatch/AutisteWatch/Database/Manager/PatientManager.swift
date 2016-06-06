@@ -37,7 +37,13 @@ class PatientManager: NSObject {
             groups = NSSet.init(object: group!)
             patient.relationGroupPatient = groups
         }
+
         patients.append(patient)
+        do {
+            try self.managedObjectContext.save()
+        } catch let error as NSError {
+            print("Could not delete Patient : \(error)")
+        }
         return patient
     }
     
@@ -61,5 +67,15 @@ class PatientManager: NSObject {
         patient.relationGroupPatient = groupsSelected
         return patient
     }
+    
+    func deletePatient(patient:Patient){
+        self.managedObjectContext.deleteObject(patient)
+        do {
+            try self.managedObjectContext.save()
+        } catch let error as NSError {
+            print("Could not delete Patient : \(error)")
+        }
+    }
+    
 
 }

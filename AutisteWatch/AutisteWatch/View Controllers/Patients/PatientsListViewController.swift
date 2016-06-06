@@ -17,6 +17,8 @@ class PatientsListViewController: UITableViewController, AddElementOfTypePatient
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        manager.createPatient("Jack", idWatch: "JackWatch", group: nil)
+        
         self.clearsSelectionOnViewWillAppear = false
         
         addPatientButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add , target: self, action: #selector(PatientsListViewController.addPatientItemAction))
@@ -55,6 +57,11 @@ class PatientsListViewController: UITableViewController, AddElementOfTypePatient
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
+            //tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            let planningManager = PlanningManager()
+            planningManager.deleteForPatient(patients[indexPath.row])
+            manager.deletePatient(patients[indexPath.row])
+            patients.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             
         }

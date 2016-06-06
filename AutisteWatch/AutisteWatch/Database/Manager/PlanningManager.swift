@@ -36,7 +36,7 @@ class PlanningManager: NSObject {
             let result = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Planning]
             return result
         } catch let error as NSError {
-            print("Could not fetch Activities : \(error)")
+            print("Could not fetch Plannings : \(error)")
         }
         
         return [Planning]()
@@ -44,17 +44,34 @@ class PlanningManager: NSObject {
     
     func fetchPlanningsByPatient(patient: Patient)->[Planning]?{
         let fetchPatientRequest = NSFetchRequest(entityName: "Planning")
-        let predicate = NSPredicate(format: patient.idPatient!, argumentArray: nil)
+        let predicate = NSPredicate(format:"idPatient like %@" , patient.idPatient!)
         fetchPatientRequest.predicate = predicate
         
         do {
             let result = try managedObjectContext.executeFetchRequest(fetchPatientRequest) as! [Planning]
             return result
         } catch let error as NSError {
-            print("Could not fetch Activities : \(error)")
+            print("Could not fetch Plannings by Patient : \(error)")
         }
         
         return [Planning]()
+    }
+    
+    func deletePlannings(plannings:[Planning]){
+        for var planning:Planning in plannings{
+            self.managedObjectContext.deleteObject(planning)
+        }
+        do {
+            try self.managedObjectContext.save()
+        } catch let error as NSError {
+            print("Could not delete Planning : \(error)")
+        }
+    }
+    
+    func deleteForPatient(patient:Patient){
+        var plannings:[Planning]=[]
+        plannings = fetchPlanningsByPatient(patient)!
+        deletePlannings(plannings)
     }
     
 
