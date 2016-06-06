@@ -63,7 +63,9 @@ class PatientsListViewController: UITableViewController {
             let planningManager = PlanningManager()
             planningManager.deleteForPatient(patients[indexPath.row])
             manager.deletePatient(patients[indexPath.row])
+            patients.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
         }
     }
 

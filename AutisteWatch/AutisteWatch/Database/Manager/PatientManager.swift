@@ -31,6 +31,11 @@ class PatientManager: NSObject {
             groups = NSSet.init(object: group!)
             patient.relationGroupPatient = groups
         }
+        do {
+            try self.managedObjectContext.save()
+        } catch let error as NSError {
+            print("Could not delete Patient : \(error)")
+        }
         return patient
     }
     
