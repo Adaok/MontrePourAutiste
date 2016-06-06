@@ -59,9 +59,9 @@ class PatientsListViewController: UITableViewController, AddElementOfTypePatient
             // Delete the row from the data source
             //tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             let planningManager = PlanningManager()
-            planningManager.deleteForPatient(patients[indexPath.row])
-            manager.deletePatient(patients[indexPath.row])
-            patients.removeAtIndex(indexPath.row)
+            planningManager.deleteForPatient(manager.patients[indexPath.row])
+            manager.deletePatient(manager.patients[indexPath.row])
+            manager.patients.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             
         }
