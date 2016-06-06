@@ -11,6 +11,8 @@ import CoreData
 
 class PatientManager: NSObject {
     
+    var patients = [Patient]()
+    
     static let sharedInstance = PatientManager()
     
     var appDelegate: AppDelegate{
@@ -19,6 +21,10 @@ class PatientManager: NSObject {
     
     var managedObjectContext: NSManagedObjectContext{
         return appDelegate.managedObjectContext
+    }
+    
+    func sortPatients(){
+        patients.sortInPlace({ $0.namePatient < $1.namePatient})
     }
     
     func createPatient(name:String, idWatch:String, group:Group?)->Patient{
@@ -31,6 +37,7 @@ class PatientManager: NSObject {
             groups = NSSet.init(object: group!)
             patient.relationGroupPatient = groups
         }
+        patients.append(patient)
         return patient
     }
     

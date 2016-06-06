@@ -8,12 +8,26 @@
 
 import UIKit
 
+protocol AddElementOfTypePatientViewControllerDelegate : class {
+    
+    func addElementOfTypePatientViewController(controller: AddElementViewController, didFinishAddingItem patient: Patient)
+    func editElementOfTypePatientViewController(controller: AddElementViewController, didFinishEditingItem patient: Patient)
+}
+
+protocol AddElementOfTypeGroupViewControllerDelegate : class {
+    
+    func addElementOfTypeGroupViewController(controller: AddElementViewController, didFinishAddingItem group: Group)
+    func editElementOfTypeGroupViewController(controller: AddElementViewController, didFinishEditingItem group: Group)
+}
+
 class AddElementViewController: UIViewController , UITextFieldDelegate{
     
     var patientToEdit : Patient?
     var groupToEdit : Group?
     var isPatient : Bool = false
     var isGroup : Bool = false
+    var patientDelegate : AddElementOfTypePatientViewControllerDelegate?
+    var groupDelegate : AddElementOfTypeGroupViewControllerDelegate?
     
     @IBOutlet weak var txtFld_elementsName: UITextField!
     
@@ -67,10 +81,12 @@ class AddElementViewController: UIViewController , UITextFieldDelegate{
     func doneAction(){
         if isPatient {
             if patientToEdit != nil {
+                patientToEdit?.namePatient = txtFld_elementsName.text
+                patientDelegate?.editElementOfTypePatientViewController(self, didFinishEditingItem: patientToEdit!)
             } else {
-                PatientManager.sharedInstance.createPatient(txtFld_elementsName.text!, idWatch: "toto", group: nil)
+                let patient = PatientManager.sharedInstance.createPatient(txtFld_elementsName.text!, idWatch: "", group: nil)
+                patientDelegate?.addElementOfTypePatientViewController(self, didFinishAddingItem: patient)
             }
-            navigationController?.popViewControllerAnimated(true)
         }
 
     }

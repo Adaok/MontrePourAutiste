@@ -8,11 +8,9 @@
 
 import UIKit
 
-class PatientsListViewController: UITableViewController {
+class PatientsListViewController: UITableViewController, AddElementOfTypePatientViewControllerDelegate {
 
-    var manager = PatientManager()
-    
-    var patients = [Patient]()
+    var manager = PatientManager.sharedInstance
     
     var addPatientButton = UIBarButtonItem()
 
@@ -26,10 +24,10 @@ class PatientsListViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        
-        patients = manager.fetchPatients()!
+        manager.sortPatients()
         self.tabBarController!.title = "Patients"
         self.tabBarController!.navigationItem.setRightBarButtonItem(addPatientButton, animated: true)
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +42,7 @@ class PatientsListViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return patients.count
+        return manager.patients.count
     }
     
     // MARK: - Table View Delegate
@@ -79,7 +77,7 @@ class PatientsListViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PatientCell", forIndexPath: indexPath)
-        ((cell.viewWithTag(1)) as! UILabel).text = patients[indexPath.row].namePatient
+        ((cell.viewWithTag(1)) as! UILabel).text = manager.patients[indexPath.row].namePatient
         return cell
     }
 
@@ -93,18 +91,17 @@ class PatientsListViewController: UITableViewController {
         
         if segue.identifier == Segues.toAddPatient {
             let vc = segue.destinationViewController as! AddElementViewController
-             vc.isPatient = true
+            vc.isPatient = true
+            vc.patientDelegate = self
         } else if segue.identifier == Segues.toEditPatient {
             let vc = segue.destinationViewController as! AddElementViewController
             let index = tableView.indexPathForCell(sender as! UITableViewCell)
-            let patient = patients[index!.row]
+            let patient = manager.patients[index!.row]
             vc.patientToEdit = patient
             vc.isPatient = true
+            vc.patientDelegate = self
         }
-        
-        
     }
-    
     
     // MARK: - Business
     
@@ -112,6 +109,19 @@ class PatientsListViewController: UITableViewController {
         performSegueWithIdentifier(Segues.toAddPatient, sender: addPatientButton)
     }
     
+    // MARK: - AddElementViewControllerDelegate
+    
+    func addElementOfTypePatientViewController(controller: AddElementViewController, didFinishAddingItem patient: Patient) {
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func editElementOfTypePatientViewController(controller: AddElementViewController, didFinishEditingItem patient: Patient) {
+        navigationController?.popViewControllerAnimated(true)
+        let index = manager.patients.indexOf({ $0 === patient })
+        let indexPath = NSIndexPath(forRow: index!, inSection: 0)
+        manager.patients[index!].namePatient = patient.namePatient
+        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+    }
     
 
 }
