@@ -13,11 +13,17 @@ class PatientsListViewController: UITableViewController, AddElementOfTypePatient
     var manager = PatientManager.sharedInstance
     
     var addPatientButton = UIBarButtonItem()
+    
+    var patients = [Patient]()
+    
+    func sortPatients(){
+        patients.sortInPlace({ $0.namePatient < $1.namePatient})
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        manager.createPatient("Jack", idWatch: "JackWatch", group: nil)
+        patients = manager.fetchPatients()!
         
         self.clearsSelectionOnViewWillAppear = false
         
@@ -26,7 +32,7 @@ class PatientsListViewController: UITableViewController, AddElementOfTypePatient
     }
     
     override func viewWillAppear(animated: Bool) {
-        manager.sortPatients()
+        sortPatients()
         self.tabBarController!.title = "Patients"
         self.tabBarController!.navigationItem.setRightBarButtonItem(addPatientButton, animated: true)
         tableView.reloadData()
@@ -44,7 +50,7 @@ class PatientsListViewController: UITableViewController, AddElementOfTypePatient
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return manager.patients.count
+        return patients.count
     }
     
     // MARK: - Table View Delegate
@@ -59,9 +65,9 @@ class PatientsListViewController: UITableViewController, AddElementOfTypePatient
             // Delete the row from the data source
             //tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             let planningManager = PlanningManager()
-            planningManager.deleteForPatient(manager.patients[indexPath.row])
-            manager.deletePatient(manager.patients[indexPath.row])
-            manager.patients.removeAtIndex(indexPath.row)
+            planningManager.deleteForPatient(patients[indexPath.row])
+            manager.deletePatient(patients[indexPath.row])
+            patients.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             
         }
@@ -84,7 +90,7 @@ class PatientsListViewController: UITableViewController, AddElementOfTypePatient
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PatientCell", forIndexPath: indexPath)
-        ((cell.viewWithTag(1)) as! UILabel).text = manager.patients[indexPath.row].namePatient
+        ((cell.viewWithTag(1)) as! UILabel).text = patients[indexPath.row].namePatient
         return cell
     }
 
@@ -103,7 +109,7 @@ class PatientsListViewController: UITableViewController, AddElementOfTypePatient
         } else if segue.identifier == Segues.toEditPatient {
             let vc = segue.destinationViewController as! AddElementViewController
             let index = tableView.indexPathForCell(sender as! UITableViewCell)
-            let patient = manager.patients[index!.row]
+            let patient = patients[index!.row]
             vc.patientToEdit = patient
             vc.isPatient = true
             vc.patientDelegate = self
@@ -120,13 +126,16 @@ class PatientsListViewController: UITableViewController, AddElementOfTypePatient
     
     func addElementOfTypePatientViewController(controller: AddElementViewController, didFinishAddingItem patient: Patient) {
         navigationController?.popViewControllerAnimated(true)
+        patients.append(patient)
+        let index = patients.indexOf({ $0 === patient })
+        tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: index!, inSection: 0)], withRowAnimation: .Bottom)
     }
     
     func editElementOfTypePatientViewController(controller: AddElementViewController, didFinishEditingItem patient: Patient) {
         navigationController?.popViewControllerAnimated(true)
-        let index = manager.patients.indexOf({ $0 === patient })
+        let index = patients.indexOf({ $0 === patient })
         let indexPath = NSIndexPath(forRow: index!, inSection: 0)
-        manager.patients[index!].namePatient = patient.namePatient
+        patients[index!].namePatient = patient.namePatient
         tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
     
