@@ -12,6 +12,7 @@ class GroupsListViewController: UITableViewController, AddElementOfTypeGroupView
     var addGroupButton:UIBarButtonItem?
     
     let groupManager = GroupManager.sharedInstance
+
     var groups = [Group]()
     
     func sortGroups(){
@@ -21,8 +22,9 @@ class GroupsListViewController: UITableViewController, AddElementOfTypeGroupView
     override func viewDidLoad() {
         super.viewDidLoad()
         groups = groupManager.fetchGroups()!
-        
+        addGroupButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(self.addGroupItemAction))
         groups = groupManager.fetchGroups()!
+            
         self.clearsSelectionOnViewWillAppear = false
         addGroupButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(GroupsListViewController.addGroupItemAction))
     }
@@ -111,6 +113,9 @@ class GroupsListViewController: UITableViewController, AddElementOfTypeGroupView
     
     func addElementOfTypeGroupViewController(controller: AddElementViewController, didFinishAddingItem group: Group) {
         navigationController?.popViewControllerAnimated(true)
+        groups.append(group)
+        let index = groups.indexOf({ $0 === group })
+        tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: index!, inSection: 0)], withRowAnimation: .Bottom)
     }
     
     func editElementOfTypeGroupViewController(controller: AddElementViewController, didFinishEditingItem group: Group) {

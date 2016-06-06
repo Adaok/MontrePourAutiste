@@ -104,10 +104,6 @@ class AddElementViewController: UIViewController , UITextFieldDelegate {
                 groupDelegate?.addElementOfTypeGroupViewController(self, didFinishAddingItem: group)
             }
         }
-
-        
-        
-
     }
     
 
