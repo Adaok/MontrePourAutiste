@@ -15,8 +15,9 @@ class ActivitiesListViewController: UICollectionViewController {
     var backButton: UIBarButtonItem?
     
     var activities: [Activity]?
-    // MARK - Lyfecycle
     
+    
+    // MARK - Lyfecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 

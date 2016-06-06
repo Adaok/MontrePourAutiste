@@ -20,7 +20,10 @@ protocol AddElementOfTypeGroupViewControllerDelegate : class {
     func editElementOfTypeGroupViewController(controller: AddElementViewController, didFinishEditingItem group: Group)
 }
 
-class AddElementViewController: UIViewController , UITextFieldDelegate{
+class AddElementViewController: UIViewController , UITextFieldDelegate {
+    
+    @IBOutlet weak var tbleVw_elementList: UITableView!
+    @IBOutlet weak var txtFld_elementsName: UITextField!
     
     var patientToEdit : Patient?
     var groupToEdit : Group?
@@ -28,8 +31,6 @@ class AddElementViewController: UIViewController , UITextFieldDelegate{
     var isGroup : Bool = false
     var patientDelegate : AddElementOfTypePatientViewControllerDelegate?
     var groupDelegate : AddElementOfTypeGroupViewControllerDelegate?
-    
-    @IBOutlet weak var txtFld_elementsName: UITextField!
     
     var doneButton = UIBarButtonItem()
     

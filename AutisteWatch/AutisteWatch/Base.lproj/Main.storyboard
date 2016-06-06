@@ -539,6 +539,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="tbleVw_elementList" destination="pqD-K1-Lpf" id="ICo-5r-d6P"/>
                         <outlet property="txtFld_elementsName" destination="TAj-5P-eAh" id="aT2-Hd-Wgn"/>
                     </connections>
                 </viewController>
@@ -912,10 +913,10 @@
         <image name="Patient" width="17" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GKy-Bb-NTL"/>
-        <segue reference="Kk0-z3-Akq"/>
-        <segue reference="jlg-tL-Sqm"/>
         <segue reference="nFd-F5-0aa"/>
+        <segue reference="I9W-Z1-rvl"/>
+        <segue reference="GKy-Bb-NTL"/>
+        <segue reference="Tmq-co-uJY"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.94901960784313721" green="0.79607843137254897" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
 </document>
