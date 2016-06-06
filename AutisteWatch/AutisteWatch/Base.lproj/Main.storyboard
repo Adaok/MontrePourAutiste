@@ -218,6 +218,7 @@
         <!--Planning View Controller-->
         <scene sceneID="1pk-XY-1yy">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="chz-Za-h3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="4X0-Dd-sxf" customClass="PlanningViewController" customModule="AutisteWatch" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="1" sectionFooterHeight="28" id="Kin-D9-LNr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -231,13 +232,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSo-kb-0A1">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSo-kb-0A1">
                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="88R-MF-EJC">
+                                        <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="88R-MF-EJC">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="toa-Q5-Ptp"/>
@@ -253,7 +254,7 @@
                                                 </mask>
                                             </variation>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tE5-gF-JYo">
+                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tE5-gF-JYo">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="tE5-gF-JYo" secondAttribute="height" multiplier="78:79" id="wzA-ii-F7N"/>
@@ -329,7 +330,6 @@
                         <segue destination="k9F-Cu-mUy" kind="show" identifier="toAddPLannedActivity" id="nFd-F5-0aa"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="chz-Za-h3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3201" y="308.25"/>
         </scene>
@@ -849,23 +849,23 @@
                                 <exclude reference="hUV-m3-OdC"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="1QO-qO-Xem"/>
-                                <exclude reference="alN-rn-cEk"/>
+                                <exclude reference="Fsc-0C-lxW"/>
                                 <exclude reference="7Rp-nj-X40"/>
                                 <exclude reference="KDd-RU-Pzw"/>
                                 <exclude reference="Pss-SN-FDV"/>
+                                <exclude reference="J2D-oO-k0u"/>
+                                <exclude reference="uJx-wz-ZxD"/>
+                                <exclude reference="3WP-JT-nci"/>
+                                <exclude reference="fb6-sj-5sm"/>
                                 <exclude reference="AVR-mE-zyz"/>
                                 <exclude reference="g3i-7z-7cG"/>
+                                <exclude reference="BjT-8B-DyP"/>
+                                <exclude reference="fZo-Ay-le3"/>
+                                <exclude reference="1QO-qO-Xem"/>
+                                <exclude reference="alN-rn-cEk"/>
                                 <exclude reference="8E9-fi-4Ax"/>
                                 <exclude reference="DFx-9E-PjS"/>
                                 <exclude reference="hM2-v7-W2v"/>
-                                <exclude reference="3WP-JT-nci"/>
-                                <exclude reference="fb6-sj-5sm"/>
-                                <exclude reference="BjT-8B-DyP"/>
-                                <exclude reference="fZo-Ay-le3"/>
-                                <exclude reference="J2D-oO-k0u"/>
-                                <exclude reference="uJx-wz-ZxD"/>
-                                <exclude reference="Fsc-0C-lxW"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -879,23 +879,23 @@
                                 <include reference="hUV-m3-OdC"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="1QO-qO-Xem"/>
-                                <include reference="alN-rn-cEk"/>
+                                <include reference="Fsc-0C-lxW"/>
                                 <include reference="7Rp-nj-X40"/>
                                 <include reference="KDd-RU-Pzw"/>
                                 <include reference="Pss-SN-FDV"/>
+                                <include reference="J2D-oO-k0u"/>
+                                <include reference="uJx-wz-ZxD"/>
+                                <include reference="3WP-JT-nci"/>
+                                <include reference="fb6-sj-5sm"/>
                                 <include reference="AVR-mE-zyz"/>
                                 <include reference="g3i-7z-7cG"/>
+                                <include reference="BjT-8B-DyP"/>
+                                <include reference="fZo-Ay-le3"/>
+                                <include reference="1QO-qO-Xem"/>
+                                <include reference="alN-rn-cEk"/>
                                 <include reference="8E9-fi-4Ax"/>
                                 <include reference="DFx-9E-PjS"/>
                                 <include reference="hM2-v7-W2v"/>
-                                <include reference="3WP-JT-nci"/>
-                                <include reference="fb6-sj-5sm"/>
-                                <include reference="BjT-8B-DyP"/>
-                                <include reference="fZo-Ay-le3"/>
-                                <include reference="J2D-oO-k0u"/>
-                                <include reference="uJx-wz-ZxD"/>
-                                <include reference="Fsc-0C-lxW"/>
                             </mask>
                         </variation>
                     </view>
@@ -917,10 +917,10 @@
         <image name="Patient" width="17" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Kk0-z3-Akq"/>
-        <segue reference="jlg-tL-Sqm"/>
-        <segue reference="nFd-F5-0aa"/>
         <segue reference="GKy-Bb-NTL"/>
+        <segue reference="jlg-tL-Sqm"/>
+        <segue reference="Kk0-z3-Akq"/>
+        <segue reference="nFd-F5-0aa"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.94901960784313721" green="0.79607843137254897" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
 </document>
