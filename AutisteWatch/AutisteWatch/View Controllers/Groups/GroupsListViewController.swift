@@ -10,14 +10,9 @@ import UIKit
 
 class GroupsListViewController: UITableViewController {
     
-    
-    var appDelegate: AppDelegate{
-        return UIApplication.sharedApplication().delegate as! AppDelegate
-    }
-    
     var addGroupButton:UIBarButtonItem?
     
-    let groupManager = GroupManager()
+    let groupManager = GroupManager.sharedInstance
     
     var groups: [Group]?
 
@@ -25,17 +20,13 @@ class GroupsListViewController: UITableViewController {
         super.viewDidLoad()
         addGroupButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(self.addGroupAction))
         groups = groupManager.fetchGroups()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
     
     override func viewWillAppear(animated: Bool) {
         self.tabBarController!.title = "Groupes"
         self.tabBarController!.navigationItem.setRightBarButtonItem(addGroupButton, animated: true)
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

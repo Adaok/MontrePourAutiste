@@ -25,9 +25,7 @@ class PatientsListViewController: UITableViewController, AddElementOfTypePatient
         
         patients = manager.fetchPatients()!
         
-        self.clearsSelectionOnViewWillAppear = false
-        
-        addPatientButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add , target: self, action: #selector(PatientsListViewController.addPatientItemAction))
+        addPatientButton = UIBarButtonItem(barButtonSystemItem: .Add , target: self, action: #selector(self.addPatientItemAction))
 
     }
     
