@@ -20,7 +20,7 @@ protocol AddElementOfTypeGroupViewControllerDelegate : class {
     func editElementOfTypeGroupViewController(controller: AddElementViewController, didFinishEditingItem group: Group)
 }
 
-class AddElementViewController: UIViewController , UITextFieldDelegate {
+class AddElementViewController: UIViewController , UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tbleVw_elementList: UITableView!
     @IBOutlet weak var txtFld_elementsName: UITextField!
@@ -31,6 +31,7 @@ class AddElementViewController: UIViewController , UITextFieldDelegate {
     var isGroup : Bool = false
     var patientDelegate : AddElementOfTypePatientViewControllerDelegate?
     var groupDelegate : AddElementOfTypeGroupViewControllerDelegate?
+    var tableViewElements = [AnyObject]()
     
     var doneButton = UIBarButtonItem()
     
@@ -49,6 +50,7 @@ class AddElementViewController: UIViewController , UITextFieldDelegate {
             } else {
                 self.navigationItem.title = "Nouveau"
             }
+            tableViewElements = GroupManager.sharedInstance.fetchGroups()!
         } else if isGroup {
             if groupToEdit != nil {
                 self.navigationItem.title = groupToEdit?.nameGroup
@@ -64,6 +66,8 @@ class AddElementViewController: UIViewController , UITextFieldDelegate {
         super.viewWillAppear(animated)
         txtFld_elementsName.becomeFirstResponder()
     }
+    
+    // MARK: Business
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange,
                    replacementString string: String) -> Bool {
@@ -106,15 +110,29 @@ class AddElementViewController: UIViewController , UITextFieldDelegate {
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: TableView DataSource
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
-    */
-
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       return tableViewElements.count
+    }
+    
+    // MARK: TableViewDelegate
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("PatientsCell", forIndexPath: indexPath)
+        ((cell.viewWithTag(2)) as! UILabel).text = tableViewElements[indexPath.row].namePatient
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 }
