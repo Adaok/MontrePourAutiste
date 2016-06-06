@@ -8,22 +8,39 @@
 
 import UIKit
 
-class GroupsListViewController: UITableViewController {
+class GroupsListViewController: UITableViewController, AddElementOfTypeGroupViewControllerDelegate {
     
+<<<<<<< HEAD
     var addGroupButton:UIBarButtonItem?
     
     let groupManager = GroupManager.sharedInstance
+=======
+    var groupManager = GroupManager.sharedInstance
     
-    var groups: [Group]?
+    var addGroupButton = UIBarButtonItem()
+            
+    var groups = [Group]()
+>>>>>>> c459a265767d9e3211e858b0daa629dd43b35d96
+    
+    func sortGroups(){
+        groups.sortInPlace({ $0.nameGroup < $1.nameGroup})
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
         addGroupButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(self.addGroupAction))
         groups = groupManager.fetchGroups()
         
+=======
+        groups = groupManager.fetchGroups()!
+        self.clearsSelectionOnViewWillAppear = false
+        addGroupButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(GroupsListViewController.addGroupItemAction))
+>>>>>>> c459a265767d9e3211e858b0daa629dd43b35d96
     }
     
     override func viewWillAppear(animated: Bool) {
+        sortGroups()
         self.tabBarController!.title = "Groupes"
         self.tabBarController!.navigationItem.setRightBarButtonItem(addGroupButton, animated: true)
         tableView.reloadData()
@@ -43,60 +60,36 @@ class GroupsListViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return groups!.count
+        return groups.count
     }
-
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let groupCell = groups![indexPath.row]
-        let cell = tableView.dequeueReusableCellWithIdentifier("GroupCell")
-        
-        cell?.textLabel?.text = groupCell.nameGroup
-
-        return cell!
-    }
-
-    // MARK: Actions
+    // MARK: - Table View delegate
     
-    func addGroupAction () {
-        performSegueWithIdentifier(Segues.toAddGroup, sender: addGroupButton)
-    }
-
-    /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
-
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
+            groupManager.deleteGroup(groups[indexPath.row])
+            groups.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-    */
 
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("GroupCell", forIndexPath: indexPath)
+        ((cell.viewWithTag(1)) as! UILabel).text = groups[indexPath.row].nameGroup
+        return cell
     }
-    */
-
     
     // MARK: - Navigation
 
@@ -104,7 +97,40 @@ class GroupsListViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == Segues.toAddGroup {
+            let vc = segue.destinationViewController as! AddElementViewController
+            vc.isGroup = true
+            vc.groupDelegate = self
+        } else if segue.identifier == Segues.toEditGroup {
+            let vc = segue.destinationViewController as! AddElementViewController
+            let index = tableView.indexPathForCell(sender as! UITableViewCell)
+            let group = groups[index!.row]
+            vc.groupToEdit = group
+            vc.isGroup = true
+            vc.groupDelegate = self
+        }
+    }
+    
+    // MARK: - Business
+    
+    func addGroupItemAction () {
+        performSegueWithIdentifier(Segues.toAddGroup, sender: addGroupButton)
     }
  
 
+    // MARK: - AddElementViewControllerDelegate
+    
+    func addElementOfTypeGroupViewController(controller: AddElementViewController, didFinishAddingItem group: Group) {
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func editElementOfTypeGroupViewController(controller: AddElementViewController, didFinishEditingItem group: Group) {
+        navigationController?.popViewControllerAnimated(true)
+        let index = groups.indexOf({ $0 === group })
+        let indexPath = NSIndexPath(forRow: index!, inSection: 0)
+        groups[index!].nameGroup = group.nameGroup
+        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+    }
+    
 }
