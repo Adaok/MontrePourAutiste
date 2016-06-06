@@ -86,6 +86,23 @@ class ActivitiesListViewController: UICollectionViewController {
     func addActivityAction() {
         
     }
+    
+    // MARK: Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == Segues.toEditActivity {
+            let indexPaths = collectionView?.indexPathsForSelectedItems()
+            let indexPath = indexPaths![0]
+            
+            let destVC: ActivityDetailViewController = segue.destinationViewController as! ActivityDetailViewController
+            
+            let cell = collectionView?.cellForItemAtIndexPath(indexPath) as! ActivityViewCell
+            
+            destVC.activityImage = cell.imgVw_activityImage.image
+            destVC.activityName = cell.lbl_activityName.text
+            
+        }
+    }
 
     // MARK: UICollectionViewDelegate
 
@@ -117,5 +134,7 @@ class ActivitiesListViewController: UICollectionViewController {
     
     }
     */
+    
+
 
 }

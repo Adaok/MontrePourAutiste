@@ -15,6 +15,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hLS-oo-fhP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.35910475130000002" green="0.41810586" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="49e-Tb-3d3" kind="relationship" relationship="rootViewController" id="vr1-PC-uTA"/>
@@ -554,7 +555,17 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.35910475130000002" green="0.41810586" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.94901960780000005" green="0.79607843140000001" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="selectedImageTintColor">
+                                <color key="value" red="0.94901960784313721" green="0.79607843137254897" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="wkX-fV-W0c" kind="relationship" relationship="viewControllers" id="B1H-re-jWC"/>
@@ -658,7 +669,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="center" reuseIdentifier="oneActivity" id="jIC-Ge-ryR" customClass="ActivityViewCell" customModule="AutisteWatch" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="183" height="177"/>
+                                <rect key="frame" x="0.0" y="64" width="186" height="188"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="186" height="188"/>
@@ -695,14 +706,14 @@
                                         <exclude reference="gLo-bN-Whf"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <exclude reference="OIN-BW-E33"/>
+                                        <exclude reference="RSf-vy-ABK"/>
+                                        <exclude reference="sDY-P0-b9t"/>
                                         <exclude reference="7Ig-wS-J9r"/>
                                         <exclude reference="Atu-fV-WJH"/>
                                         <exclude reference="P82-mT-wHA"/>
                                         <exclude reference="ucf-KD-Ctw"/>
                                         <exclude reference="w9x-u8-07Z"/>
-                                        <exclude reference="OIN-BW-E33"/>
-                                        <exclude reference="RSf-vy-ABK"/>
-                                        <exclude reference="sDY-P0-b9t"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -711,14 +722,14 @@
                                         <include reference="gLo-bN-Whf"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <include reference="OIN-BW-E33"/>
+                                        <include reference="RSf-vy-ABK"/>
+                                        <include reference="sDY-P0-b9t"/>
                                         <include reference="7Ig-wS-J9r"/>
                                         <include reference="Atu-fV-WJH"/>
                                         <include reference="P82-mT-wHA"/>
                                         <exclude reference="ucf-KD-Ctw"/>
                                         <exclude reference="w9x-u8-07Z"/>
-                                        <include reference="OIN-BW-E33"/>
-                                        <include reference="RSf-vy-ABK"/>
-                                        <include reference="sDY-P0-b9t"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -785,9 +796,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hUV-m3-OdC">
-                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
-                            </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pour tous ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwX-Lt-e9h">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -804,6 +812,10 @@
                                     <!--2016-06-01 08:21:54 +0000-->
                                 </date>
                             </datePicker>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hUV-m3-OdC">
+                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                <color key="onTintColor" red="0.94901960780000005" green="0.79607843140000001" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -829,10 +841,10 @@
                                 <exclude reference="foO-4a-oFw"/>
                                 <exclude reference="BTV-pL-euY"/>
                                 <exclude reference="Iq5-np-rnZ"/>
-                                <exclude reference="hUV-m3-OdC"/>
                                 <exclude reference="mwX-Lt-e9h"/>
                                 <exclude reference="69f-Pw-WBN"/>
                                 <exclude reference="j9J-42-8gd"/>
+                                <exclude reference="hUV-m3-OdC"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="7Rp-nj-X40"/>
@@ -858,10 +870,10 @@
                                 <include reference="foO-4a-oFw"/>
                                 <include reference="BTV-pL-euY"/>
                                 <include reference="Iq5-np-rnZ"/>
-                                <include reference="hUV-m3-OdC"/>
                                 <include reference="mwX-Lt-e9h"/>
                                 <include reference="69f-Pw-WBN"/>
                                 <include reference="j9J-42-8gd"/>
+                                <include reference="hUV-m3-OdC"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="7Rp-nj-X40"/>
@@ -883,6 +895,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="imgVw_activityImg" destination="foO-4a-oFw" id="JFy-3w-eQ6"/>
+                        <outlet property="txtFld_activityName" destination="BTV-pL-euY" id="DB1-jY-CqD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qs-Tf-9wH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -896,9 +912,10 @@
         <image name="Patient" width="17" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nFd-F5-0aa"/>
-        <segue reference="I9W-Z1-rvl"/>
         <segue reference="GKy-Bb-NTL"/>
-        <segue reference="Tmq-co-uJY"/>
+        <segue reference="Kk0-z3-Akq"/>
+        <segue reference="jlg-tL-Sqm"/>
+        <segue reference="nFd-F5-0aa"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.94901960784313721" green="0.79607843137254897" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
 </document>
