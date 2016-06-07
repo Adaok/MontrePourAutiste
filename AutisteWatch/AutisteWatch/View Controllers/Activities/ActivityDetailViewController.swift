@@ -12,6 +12,7 @@ class ActivityDetailViewController: UIViewController {
 
     @IBOutlet weak var imgVw_activityImg: UIImageView!
     @IBOutlet weak var txtFld_activityName: UITextField!
+    var saveButton: UIBarButtonItem!
     
     var activityImage: UIImage!
     var activityName: String!
