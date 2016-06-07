@@ -8,7 +8,17 @@
 
 import UIKit
 
+protocol PlanningViewControllerDelegate {
+    func displayPlanningOfTypeGroupViewController(controller: PlanOrNotifyViewController, didDisplayingGroup group: Group)
+    func displayPlanningOfTypePatientViewController(controller: PlanOrNotifyViewController, didNotifyGroup patient: Patient)
+}
+
 class PlanningViewController: UITableViewController {
+    
+    var patientToDisplayPlanning : Patient?
+    var groupToDisplayPlanning : Group?
+    var isPatient : Bool = false
+    var isGroup : Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
