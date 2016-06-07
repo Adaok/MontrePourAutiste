@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6724" systemVersion="14A389" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchAutiste" customModuleProvider="target">
+                    <items>
+                        <label alignment="center" text="Watch" id="VoE-g4-owh"/>
+                        <label alignment="center" text="Number" id="c85-2o-EIZ"/>
+                        <label alignment="center" verticalAlignment="center" text="0" id="kpQ-X6-sla"/>
+                    </items>
+                    <connections>
+                        <outlet property="idNumber" destination="kpQ-X6-sla" id="9RA-17-Ktc"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
@@ -31,7 +40,18 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="WatchAutiste" customModuleProvider="target">
+                    <items>
+                        <timer alignment="center" id="lsN-4B-GeF"/>
+                        <label alignment="center" verticalAlignment="center" text="Label" id="XMQ-Ab-4Ub"/>
+                        <imageView alignment="center" verticalAlignment="bottom" id="xza-AG-B8C"/>
+                    </items>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="XMQ-Ab-4Ub" id="E3h-mp-Pwe"/>
+                        <outlet property="imageNotification" destination="xza-AG-B8C" id="XIx-Bd-gHZ"/>
+                        <outlet property="timeLabel" destination="lsN-4B-GeF" id="x6t-S0-dIy"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import WatchConnectivity
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -108,5 +109,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+}
+
+extension AppDelegate: WCSessionDelegate{
+    func session(session: WCSession, didReceiveMessage message: [String:AnyObject], replyHandler: ([String: AnyObject]) -> Void){
+        replyHandler(["responseIdentifiant":10])
+    }
 }
 
