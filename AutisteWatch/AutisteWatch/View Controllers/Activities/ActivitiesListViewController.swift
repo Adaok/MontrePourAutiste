@@ -11,7 +11,7 @@ import UIKit
 
 private let reuseIdentifier = "oneActivity"
 
-class ActivitiesListViewController: UICollectionViewController {
+class ActivitiesListViewController: UICollectionViewController, ActivityDetailDelegate {
     var addActivityButton: UIBarButtonItem?
     var backButton: UIBarButtonItem?
     
@@ -113,6 +113,21 @@ class ActivitiesListViewController: UICollectionViewController {
         }
     }
 
+    func activityDetailViewController(controller: ActivityDetailViewController, didFinishAddingItem activity: Activity) {
+        navigationController?.popViewControllerAnimated(true)
+        activities?.append(activity)
+        let index = activities?.indexOf({ $0 === activity })
+        collectionView?.insertItemsAtIndexPaths([NSIndexPath(forRow: index!, inSection: 0)])
+        
+    }
+    
+    func activityDetailViewController(controller: ActivityDetailViewController, didFinishEditingItem activity: Activity) {
+        navigationController?.popViewControllerAnimated(true)
+        let index = activities?.indexOf({ $0 === activity })
+        activities![index!] = activity
+        collectionView?.reloadItemsAtIndexPaths([NSIndexPath(forRow: index!, inSection: 0)])
+    }
+    
     // MARK: UICollectionViewDelegate
 
     /*
