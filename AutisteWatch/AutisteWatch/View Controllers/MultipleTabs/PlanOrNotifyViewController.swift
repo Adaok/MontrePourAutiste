@@ -28,9 +28,11 @@ class PlanOrNotifyViewController: UIViewController, PlanningViewControllerDelega
         super.viewDidLoad()
         
         if isPatient {
-            self.navigationItem.title = "Gérer le groupe"
+            let name : String = patientToManage!.namePatient!
+            self.navigationItem.title = "Gérer \(name)"
         } else if isGroup {
-            self.navigationItem.title = "Gérer \(patientToManage!.namePatient)"
+            let nameGroup: String = groupToManage!.nameGroup!
+            self.navigationItem.title = "Gérer le groupe \(nameGroup)"
         }
 
         // Do any additional setup after loading the view.

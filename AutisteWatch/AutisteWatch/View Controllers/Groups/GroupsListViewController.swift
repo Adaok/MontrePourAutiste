@@ -99,6 +99,12 @@ class GroupsListViewController: UITableViewController, AddElementOfTypeGroupView
             vc.groupToEdit = group
             vc.isGroup = true
             vc.groupDelegate = self
+        }  else if segue.identifier == Segues.toPlanGroup {
+            let vc = segue.destinationViewController as! PlanOrNotifyViewController
+            let index = tableView.indexPathForCell(sender as! UITableViewCell)
+            let group = groups[index!.row]
+            vc.isGroup = true
+            vc.groupToManage = group
         }
     }
     

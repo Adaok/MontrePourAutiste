@@ -100,7 +100,14 @@ class PatientsListViewController: UITableViewController, AddElementOfTypePatient
             vc.patientToEdit = patient
             vc.isPatient = true
             vc.patientDelegate = self
+        } else if segue.identifier == Segues.toPlanPatient {
+            let vc = segue.destinationViewController as! PlanOrNotifyViewController
+            let index = tableView.indexPathForCell(sender as! UITableViewCell)
+            let patient = patients[index!.row]
+            vc.isPatient = true
+            vc.patientToManage = patient
         }
+        
     }
     
     // MARK: - Business
