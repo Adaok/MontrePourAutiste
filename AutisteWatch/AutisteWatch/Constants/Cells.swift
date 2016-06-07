@@ -13,4 +13,6 @@ struct Cells {
     static let patientCell = "PatientCell"
     static let elementCell = "ElementCell"
     static let planningCell = "PlanningCell"
+    static let activityCell = "ActivityCell"
+    static let imageCell = "ImageCell"
 }

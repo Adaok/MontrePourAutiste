@@ -79,7 +79,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="zXW-dj-kYP" kind="show" identifier="toPlanPatient" id="I9W-Z1-rvl"/>
+                                    <segue destination="zXW-dj-kYP" kind="show" identifier="toPlanOrNotifyPatient" id="I9W-Z1-rvl"/>
                                     <segue destination="5bM-YQ-fDT" kind="show" identifier="toEditPatient" trigger="accessoryAction" id="5lv-Sw-2Wt"/>
                                 </connections>
                             </tableViewCell>
@@ -131,6 +131,9 @@
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <state key="normal" title="Notifier"/>
+                                        <connections>
+                                            <segue destination="qQU-2v-7ZB" kind="show" identifier="toNotify" id="GBe-JS-HrC"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -401,6 +404,72 @@
             </objects>
             <point key="canvasLocation" x="4047" y="308.25"/>
         </scene>
+        <!--Image List View Controller-->
+        <scene sceneID="AdH-GQ-fef">
+            <objects>
+                <collectionViewController id="gg8-iq-VYO" customClass="ImageListViewController" customModule="AutisteWatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="DQ1-8j-oYZ">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pe9-Of-A4Z">
+                            <size key="itemSize" width="149" height="124"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="BxS-1G-IKP">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="149" height="124"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="57a-98-xBp">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="57a-98-xBp" firstAttribute="centerX" secondItem="BxS-1G-IKP" secondAttribute="centerX" id="3nf-6M-7Ce"/>
+                                    <constraint firstItem="57a-98-xBp" firstAttribute="centerY" secondItem="BxS-1G-IKP" secondAttribute="centerY" id="Fnw-JJ-GYu"/>
+                                    <constraint firstItem="57a-98-xBp" firstAttribute="width" secondItem="BxS-1G-IKP" secondAttribute="width" id="RUx-aG-eH6"/>
+                                    <constraint firstItem="57a-98-xBp" firstAttribute="height" secondItem="BxS-1G-IKP" secondAttribute="height" id="uG8-8P-hf1"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="57a-98-xBp"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="3nf-6M-7Ce"/>
+                                        <exclude reference="Fnw-JJ-GYu"/>
+                                        <exclude reference="RUx-aG-eH6"/>
+                                        <exclude reference="uG8-8P-hf1"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="57a-98-xBp"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="3nf-6M-7Ce"/>
+                                        <include reference="Fnw-JJ-GYu"/>
+                                        <include reference="RUx-aG-eH6"/>
+                                        <include reference="uG8-8P-hf1"/>
+                                    </mask>
+                                </variation>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="gg8-iq-VYO" id="Mus-J8-ZXD"/>
+                            <outlet property="delegate" destination="gg8-iq-VYO" id="auM-yB-PGx"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IHJ-EI-1fd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5847" y="-330"/>
+        </scene>
         <!--Add Element View Controller-->
         <scene sceneID="PsZ-CI-Kms">
             <objects>
@@ -545,7 +614,114 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o1B-td-FEZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1794" y="907.5"/>
+            <point key="canvasLocation" x="1692" y="977.25"/>
+        </scene>
+        <!--Notify View Controller-->
+        <scene sceneID="Ozi-Xw-xyu">
+            <objects>
+                <viewController id="qQU-2v-7ZB" customClass="NotifyViewController" customModule="AutisteWatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="61q-ax-VR7"/>
+                        <viewControllerLayoutGuide type="bottom" id="ntr-53-zov"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6PM-07-EmB">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom de la notification" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQH-oX-Uci">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="No Activity" translatesAutoresizingMaskIntoConstraints="NO" id="W40-49-avm">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="W40-49-avm" secondAttribute="height" multiplier="1:1" id="TMk-vW-1BS"/>
+                                    <constraint firstAttribute="width" secondItem="W40-49-avm" secondAttribute="height" multiplier="1:1" id="pZB-QB-8TM"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="TMk-vW-1BS"/>
+                                        <exclude reference="pZB-QB-8TM"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="70" y="93" width="260" height="260"/>
+                                    <mask key="constraints">
+                                        <exclude reference="TMk-vW-1BS"/>
+                                        <include reference="pZB-QB-8TM"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CQH-oX-Uci" firstAttribute="top" secondItem="W40-49-avm" secondAttribute="bottom" constant="65" id="8ov-HI-uaw">
+                                <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                            </constraint>
+                            <constraint firstAttribute="leadingMargin" secondItem="W40-49-avm" secondAttribute="leading" id="9tf-ca-ZGb"/>
+                            <constraint firstItem="CQH-oX-Uci" firstAttribute="leading" secondItem="6PM-07-EmB" secondAttribute="leadingMargin" constant="132" id="CKT-BX-Fsl">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="W40-49-avm" firstAttribute="centerX" secondItem="6PM-07-EmB" secondAttribute="centerX" id="GDI-EO-vo0"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="W40-49-avm" secondAttribute="leading" id="RJV-4s-MYq">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-50"/>
+                            </constraint>
+                            <constraint firstItem="W40-49-avm" firstAttribute="width" secondItem="6PM-07-EmB" secondAttribute="width" id="Vit-ec-LnH"/>
+                            <constraint firstItem="W40-49-avm" firstAttribute="top" secondItem="61q-ax-VR7" secondAttribute="bottom" constant="8" id="W2A-oO-j7N">
+                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="W40-49-avm" secondAttribute="trailing" constant="60" id="lEH-EJ-HBs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CQH-oX-Uci" secondAttribute="trailing" constant="131" id="sbt-oM-DJQ">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="W40-49-avm" secondAttribute="trailing" id="wJk-Rh-WPn">
+                                <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="CQH-oX-Uci"/>
+                                <exclude reference="W40-49-avm"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="9tf-ca-ZGb"/>
+                                <exclude reference="GDI-EO-vo0"/>
+                                <exclude reference="RJV-4s-MYq"/>
+                                <exclude reference="Vit-ec-LnH"/>
+                                <exclude reference="W2A-oO-j7N"/>
+                                <exclude reference="lEH-EJ-HBs"/>
+                                <exclude reference="wJk-Rh-WPn"/>
+                                <exclude reference="8ov-HI-uaw"/>
+                                <exclude reference="CKT-BX-Fsl"/>
+                                <exclude reference="sbt-oM-DJQ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="CQH-oX-Uci"/>
+                                <include reference="W40-49-avm"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="9tf-ca-ZGb"/>
+                                <exclude reference="GDI-EO-vo0"/>
+                                <include reference="RJV-4s-MYq"/>
+                                <exclude reference="Vit-ec-LnH"/>
+                                <include reference="W2A-oO-j7N"/>
+                                <exclude reference="lEH-EJ-HBs"/>
+                                <include reference="wJk-Rh-WPn"/>
+                                <include reference="8ov-HI-uaw"/>
+                                <include reference="CKT-BX-Fsl"/>
+                                <include reference="sbt-oM-DJQ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <segue destination="gg8-iq-VYO" kind="show" identifier="toImageListNotify" id="7Gp-0q-XTk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ig1-OZ-xun" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5293.5" y="1214.25"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -635,7 +811,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="zXW-dj-kYP" kind="show" identifier="toPlanGroup" id="Kk0-z3-Akq"/>
+                                    <segue destination="zXW-dj-kYP" kind="show" identifier="toPlanOrNotifyGroup" id="Kk0-z3-Akq"/>
                                     <segue destination="5bM-YQ-fDT" kind="show" identifier="toEditGroup" trigger="accessoryAction" id="Nhh-1Q-x7Q"/>
                                 </connections>
                             </tableViewCell>
@@ -669,7 +845,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="center" reuseIdentifier="oneActivity" id="jIC-Ge-ryR" customClass="ActivityViewCell" customModule="AutisteWatch" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="center" reuseIdentifier="ActivityCell" id="jIC-Ge-ryR" customClass="ActivityViewCell" customModule="AutisteWatch" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="186" height="188"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -902,25 +1078,27 @@
                     <connections>
                         <outlet property="imgVw_activityImg" destination="foO-4a-oFw" id="JFy-3w-eQ6"/>
                         <outlet property="txtFld_activityName" destination="BTV-pL-euY" id="DB1-jY-CqD"/>
+                        <segue destination="gg8-iq-VYO" kind="show" identifier="toImageListActivity" id="hdV-uC-AaW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qs-Tf-9wH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2776.5" y="-505.5"/>
+            <point key="canvasLocation" x="5103" y="-458.25"/>
         </scene>
     </scenes>
     <resources>
         <image name="Activity" width="17" height="17"/>
-        <image name="Bed" width="173" height="173"/>
+        <image name="Bed" width="171" height="171"/>
         <image name="Group" width="17" height="17"/>
         <image name="No Activity" width="171" height="171"/>
         <image name="Patient" width="17" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="nFd-F5-0aa"/>
+        <segue reference="I9W-Z1-rvl"/>
         <segue reference="GKy-Bb-NTL"/>
         <segue reference="jlg-tL-Sqm"/>
-        <segue reference="Kk0-z3-Akq"/>
-        <segue reference="nFd-F5-0aa"/>
+        <segue reference="7Gp-0q-XTk"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.94901960784313721" green="0.79607843137254897" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
 </document>

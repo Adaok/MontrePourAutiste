@@ -12,14 +12,15 @@ struct Segues {
     // MARK: - Activities Tab
     static let toAddActivity = "toAddActivity"
     static let toEditActivity = "toEditActivity"
+    static let toImageListActivity = "toImageListActivity"
     
     // MARK: - Groups Tab
-    static let toPlanGroup = "toPlanGroup"
+    static let toPlanGroup = "toPlanOrNotifyGroup"
     static let toAddGroup = "toAddGroup"
     static let toEditGroup = "toEditGroup"
     
     // MARK: - Patients Tab
-    static let toPlanPatient = "toPlanPatient"
+    static let toPlanPatient = "toPlanOrNotifyPatient"
     static let toAddPatient = "toAddPatient"
     static let toEditPatient = "toEditPatient"
     
@@ -27,6 +28,8 @@ struct Segues {
     static let toPlanning = "toPlanning"
     static let toAddPlannedActivity = "toAddPlannedActivity"
     static let toEditPlannedActivity = "toEditPlannedAcitvity"
+    static let toNotify = "toNotify"
+    static let toImageListNotify = "toImageListNotify"
     
 
 }

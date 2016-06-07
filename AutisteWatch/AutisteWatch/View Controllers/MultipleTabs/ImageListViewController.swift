@@ -1,43 +1,25 @@
 //
-//  ActivitiesListViewController.swift
+//  ImageListViewController.swift
 //  AutisteWatch
 //
-//  Created by iem on 01/06/2016.
-//  Copyright © 2016 LP-BG-IEM. All rights reserved.
+//  Created by iem on 07/06/2016.
+//
 //
 
 import UIKit
 
+class ImageListViewController: UICollectionViewController {
 
-class ActivitiesListViewController: UICollectionViewController {
-    var addActivityButton: UIBarButtonItem?
-    var backButton: UIBarButtonItem?
-    
-    var activities: [Activity]?
-    var images: [Image]?
-    
-    let am: ActivityManager = ActivityManager.sharedInstance
+    private var images: [Image]?
     let im: ImageManager = ImageManager.sharedInstance
     
-    // MARK - Lyfecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView?.backgroundColor = UIColor.whiteColor()
-        addActivityButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(self.addActivityAction))
-        // Do any additional setup after loading the view.
-    
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        self.tabBarController?.navigationItem.setRightBarButtonItem(addActivityButton, animated: true)
-        self.tabBarController?.navigationItem.title = "Activities"
-        activities = am.fetchActivities()
+        
         images = im.fetchImages()
+
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,49 +47,19 @@ class ActivitiesListViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-//        return activities!.count
-        if activities != nil {
-            return (activities?.count)!
+        if images != nil {
+            return images!.count
         } else {
             return 0
         }
-        
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Cells.activityCell, forIndexPath: indexPath) as! ActivityViewCell
-        
-        if activities != nil {
-            cell.imgVw_activityImage.image = UIImage(contentsOfFile: images![indexPath.row].pathImage!)
-            cell.lbl_activityName.text = activities![indexPath.row].nameActivity
-        }
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Cells.imageCell, forIndexPath: indexPath)
+    
         // Configure the cell
     
         return cell
-    }
-    
-    // MARK: Actions
-    
-    func addActivityAction() {
-        performSegueWithIdentifier(Segues.toAddActivity, sender: self)
-        
-    }
-    
-    // MARK: Navigation
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == Segues.toEditActivity {
-            let indexPaths = collectionView?.indexPathsForSelectedItems()
-            let indexPath = indexPaths![0]
-            
-            let destVC: ActivityDetailViewController = segue.destinationViewController as! ActivityDetailViewController
-            
-            let cell = collectionView?.cellForItemAtIndexPath(indexPath) as! ActivityViewCell
-            
-            destVC.activityImage = cell.imgVw_activityImage.image
-            destVC.activityName = cell.lbl_activityName.text
-            
-        }
     }
 
     // MARK: UICollectionViewDelegate
@@ -140,7 +92,5 @@ class ActivitiesListViewController: UICollectionViewController {
     
     }
     */
-    
-
 
 }

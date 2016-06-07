@@ -38,6 +38,8 @@
 		B80318341D001E90007F4458 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B80318331D001E90007F4458 /* Assets.xcassets */; };
 		B80318381D001E90007F4458 /* WatchAutiste.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B803181A1D001E8F007F4458 /* WatchAutiste.app */; };
 		B86F89451D06A96100C7E94F /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F89441D06A96100C7E94F /* Cells.swift */; };
+		B86F89471D06C8B100C7E94F /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F89461D06C8B100C7E94F /* ImageListViewController.swift */; };
+		B86F89491D06C8D400C7E94F /* NotifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F89481D06C8D400C7E94F /* NotifyViewController.swift */; };
 		B8E9E18F1CFF0DC200B70923 /* ActivitiesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9E18E1CFF0DC200B70923 /* ActivitiesListViewController.swift */; };
 		B8E9E1911CFF0DD600B70923 /* GroupsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9E1901CFF0DD600B70923 /* GroupsListViewController.swift */; };
 		B8E9E1931CFF0DE500B70923 /* PatientsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9E1921CFF0DE500B70923 /* PatientsListViewController.swift */; };
@@ -147,6 +149,8 @@
 		B80318331D001E90007F4458 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B80318351D001E90007F4458 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B86F89441D06A96100C7E94F /* Cells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
+		B86F89461D06C8B100C7E94F /* ImageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
+		B86F89481D06C8D400C7E94F /* NotifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyViewController.swift; sourceTree = "<group>"; };
 		B8E9E18E1CFF0DC200B70923 /* ActivitiesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesListViewController.swift; sourceTree = "<group>"; };
 		B8E9E1901CFF0DD600B70923 /* GroupsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsListViewController.swift; sourceTree = "<group>"; };
 		B8E9E1921CFF0DE500B70923 /* PatientsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientsListViewController.swift; sourceTree = "<group>"; };
@@ -354,6 +358,8 @@
 				B8E9E19B1CFF0EAA00B70923 /* PlanningViewController.swift */,
 				B8E9E19D1CFF0ECE00B70923 /* ImgSelectionViewController.swift */,
 				B8E9E19F1CFF0EFB00B70923 /* AddElementViewController.swift */,
+				B86F89461D06C8B100C7E94F /* ImageListViewController.swift */,
+				B86F89481D06C8D400C7E94F /* NotifyViewController.swift */,
 			);
 			path = MultipleTabs;
 			sourceTree = "<group>";
@@ -563,10 +569,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8E9E1A51D0086FE00B70923 /* ActivityViewCell.swift in Sources */,
+				B86F89491D06C8D400C7E94F /* NotifyViewController.swift in Sources */,
 				B86F89451D06A96100C7E94F /* Cells.swift in Sources */,
 				B8E9E1951CFF0E2500B70923 /* ActivityDetailViewController.swift in Sources */,
 				73BD3EE71CFE2F23005C080D /* Group.swift in Sources */,
 				73BD3EE31CFE2F23005C080D /* Image.swift in Sources */,
+				B86F89471D06C8B100C7E94F /* ImageListViewController.swift in Sources */,
 				73BD3EF21CFE3001005C080D /* GroupManager.swift in Sources */,
 				73BD3EF01CFE2FEA005C080D /* PlanningManager.swift in Sources */,
 				B8E9E19E1CFF0ECE00B70923 /* ImgSelectionViewController.swift in Sources */,
