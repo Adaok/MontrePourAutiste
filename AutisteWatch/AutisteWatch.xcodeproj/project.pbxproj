@@ -480,7 +480,7 @@
 					};
 					B80318191D001E8F007F4458 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 7L6YT6RXSD;
+						DevelopmentTeam = QLL3DR6XP5;
 					};
 					B80318251D001E90007F4458 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -941,6 +941,7 @@
 				B803183C1D001E90007F4458 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B803183F1D001E90007F4458 /* Build configuration list for PBXNativeTarget "WatchAutiste" */ = {
 			isa = XCConfigurationList;
@@ -949,6 +950,7 @@
 				B803183A1D001E90007F4458 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
