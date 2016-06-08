@@ -8,11 +8,12 @@
 
 import UIKit
 
-class NotifyViewController: UIViewController {
+class NotifyViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var imgVw_pictoNotify: UIImageView!
+    @IBOutlet weak var txtFld_notification: UITextField!
     
-    var validateButton = UIBarButtonItem()
+    var validateButton: UIBarButtonItem!
 
     var patientToNotify : Patient?
     var groupToNotify : Group?
@@ -22,20 +23,25 @@ class NotifyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //validateButton = UIBarButtonItem(title: "Valider", style: .Done, target: self, action:Selector("validateNotification:"))
+        txtFld_notification.delegate = self
         
-        var imageView = imgVw_pictoNotify
+        validateButton = UIBarButtonItem(title: "Valider", style: .Done, target: self, action:#selector(NotifyViewController.validateNotification(_:)))
     
         if isPatient {
-            print(patientToNotify!.namePatient)
+            let name : String = patientToNotify!.namePatient!
+            self.navigationItem.title = "Notifier \(name)"
         }
         if isGroup {
-            print(groupToNotify!.nameGroup)
+            let nameGroup : String = groupToNotify!.nameGroup!
+            self.navigationItem.title = "Notifier \(nameGroup)"
         }
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
-        imageView.userInteractionEnabled = true
-        imageView.addGestureRecognizer(tapGestureRecognizer)
+        self.navigationItem.setRightBarButtonItem(validateButton, animated: true)
+        validateButton.enabled = false
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(NotifyViewController.imageTapped(_:)))
+        imgVw_pictoNotify.userInteractionEnabled = true
+        imgVw_pictoNotify.addGestureRecognizer(tapGestureRecognizer)
         
         // Do any additional setup after loading the view.
     }
@@ -43,6 +49,21 @@ class NotifyViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange,
+                   replacementString string: String) -> Bool {
+        
+        let beforeText: NSString = textField.text!
+        let afterText: NSString = beforeText.stringByReplacingCharactersInRange(range, withString: string)
+        
+        if afterText.length > 0 {
+            validateButton.enabled = true
+        } else {
+            validateButton.enabled = false
+        }
+        
+        return true
     }
     
 
