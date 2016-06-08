@@ -20,6 +20,7 @@ class ActivityDetailViewController: UIViewController {
     @IBOutlet weak var imgVw_activityImg: UIImageView!
     @IBOutlet weak var txtFld_activityName: UITextField!
     var saveButton: UIBarButtonItem!
+    var chooseImgAction: UITapGestureRecognizer!
     
     // MARK: - Attributes
     var activityImage: UIImage!
@@ -32,7 +33,10 @@ class ActivityDetailViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        imgVw_activityImg.userInteractionEnabled = true
+        chooseImgAction = UITapGestureRecognizer(target: self, action: #selector(self.chooseImg))
+        imgVw_activityImg.gestureRecognizers = [chooseImgAction]
+        
         imgVw_activityImg.image = activityImage
         txtFld_activityName.placeholder = activityName
         
@@ -52,6 +56,11 @@ class ActivityDetailViewController: UIViewController {
     }
     
 
+    // MARK: - Actions
+    
+    func chooseImg() {
+        self.performSegueWithIdentifier(Segues.toImageListActivity, sender: self)
+    }
     /*
     // MARK: - Navigation
 

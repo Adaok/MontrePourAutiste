@@ -40,6 +40,7 @@
 		B86F89451D06A96100C7E94F /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F89441D06A96100C7E94F /* Cells.swift */; };
 		B86F89471D06C8B100C7E94F /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F89461D06C8B100C7E94F /* ImageListViewController.swift */; };
 		B86F89491D06C8D400C7E94F /* NotifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F89481D06C8D400C7E94F /* NotifyViewController.swift */; };
+		B86F894B1D08259000C7E94F /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F894A1D08259000C7E94F /* ImageViewCell.swift */; };
 		B8E9E18F1CFF0DC200B70923 /* ActivitiesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9E18E1CFF0DC200B70923 /* ActivitiesListViewController.swift */; };
 		B8E9E1911CFF0DD600B70923 /* GroupsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9E1901CFF0DD600B70923 /* GroupsListViewController.swift */; };
 		B8E9E1931CFF0DE500B70923 /* PatientsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9E1921CFF0DE500B70923 /* PatientsListViewController.swift */; };
@@ -151,6 +152,7 @@
 		B86F89441D06A96100C7E94F /* Cells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
 		B86F89461D06C8B100C7E94F /* ImageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
 		B86F89481D06C8D400C7E94F /* NotifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyViewController.swift; sourceTree = "<group>"; };
+		B86F894A1D08259000C7E94F /* ImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
 		B8E9E18E1CFF0DC200B70923 /* ActivitiesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesListViewController.swift; sourceTree = "<group>"; };
 		B8E9E1901CFF0DD600B70923 /* GroupsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsListViewController.swift; sourceTree = "<group>"; };
 		B8E9E1921CFF0DE500B70923 /* PatientsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientsListViewController.swift; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 				B8E9E19F1CFF0EFB00B70923 /* AddElementViewController.swift */,
 				B86F89461D06C8B100C7E94F /* ImageListViewController.swift */,
 				B86F89481D06C8D400C7E94F /* NotifyViewController.swift */,
+				B86F894A1D08259000C7E94F /* ImageViewCell.swift */,
 			);
 			path = MultipleTabs;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				B8E9E19E1CFF0ECE00B70923 /* ImgSelectionViewController.swift in Sources */,
 				B8E9E18F1CFF0DC200B70923 /* ActivitiesListViewController.swift in Sources */,
 				B8E9E1A31CFF110900B70923 /* Segues.swift in Sources */,
+				B86F894B1D08259000C7E94F /* ImageViewCell.swift in Sources */,
 				73BD3EE11CFE2F23005C080D /* Activity.swift in Sources */,
 				73BD3EE91CFE2F23005C080D /* Patient.swift in Sources */,
 				73BD3EE41CFE2F23005C080D /* Planning+CoreDataProperties.swift in Sources */,

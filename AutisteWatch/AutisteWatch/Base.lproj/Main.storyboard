@@ -550,12 +550,12 @@
                                                     <exclude reference="B0W-nv-r6e"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <exclude reference="2YI-Fy-AYR"/>
+                                                    <exclude reference="gQm-9J-lDu"/>
                                                     <exclude reference="01z-cV-ytk"/>
                                                     <exclude reference="JbN-HV-6W8"/>
                                                     <exclude reference="a0h-j5-7No"/>
                                                     <exclude reference="pPh-Gw-gjs"/>
-                                                    <exclude reference="2YI-Fy-AYR"/>
-                                                    <exclude reference="gQm-9J-lDu"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -564,12 +564,12 @@
                                                     <include reference="B0W-nv-r6e"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <include reference="2YI-Fy-AYR"/>
+                                                    <include reference="gQm-9J-lDu"/>
                                                     <include reference="01z-cV-ytk"/>
                                                     <include reference="JbN-HV-6W8"/>
                                                     <include reference="a0h-j5-7No"/>
                                                     <include reference="pPh-Gw-gjs"/>
-                                                    <include reference="2YI-Fy-AYR"/>
-                                                    <include reference="gQm-9J-lDu"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
