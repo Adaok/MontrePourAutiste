@@ -489,7 +489,7 @@
 					};
 					B80318191D001E8F007F4458 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = QLL3DR6XP5;
+						DevelopmentTeam = 7L6YT6RXSD;
 					};
 					B80318251D001E90007F4458 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -846,11 +846,13 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = WatchAutiste_Extension;
 				INFOPLIST_FILE = WatchAutiste/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.IEM.AutisteWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -865,11 +867,13 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = WatchAutiste_Extension;
 				INFOPLIST_FILE = WatchAutiste/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.IEM.AutisteWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
