@@ -9,9 +9,21 @@
 import UIKit
 
 class NotifyViewController: UIViewController {
+    
+    var patientToNotify : Patient?
+    var groupToNotify : Group?
+    var isPatient : Bool = false
+    var isGroup : Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if isPatient {
+            print(patientToNotify!.namePatient)
+        }
+        if isGroup {
+            print(groupToNotify!.nameGroup)
+        }
 
         // Do any additional setup after loading the view.
     }
