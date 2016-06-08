@@ -21,7 +21,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbD-Js-cgz">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="Mk3-Ua-71l">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="Mk3-Ua-71l">
                                         <rect key="frame" x="44" y="44" width="512" height="512"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Mk3-Ua-71l" secondAttribute="height" multiplier="1:1" id="EOD-an-I3A"/>

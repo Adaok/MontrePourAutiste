@@ -25,6 +25,10 @@ class PatientsListViewController: UITableViewController, AddElementOfTypePatient
         patients = manager.fetchPatients()!
         addPatientButton = UIBarButtonItem(barButtonSystemItem: .Add , target: self, action: #selector(self.addPatientItemAction))
         
+        if self.checkFirstLaunch() {
+            self.setImageDatabase()
+        }
+        
         self.clearsSelectionOnViewWillAppear = false
 
     }
@@ -100,7 +104,14 @@ class PatientsListViewController: UITableViewController, AddElementOfTypePatient
             vc.patientToEdit = patient
             vc.isPatient = true
             vc.patientDelegate = self
+        } else if segue.identifier == Segues.toPlanPatient {
+            let vc = segue.destinationViewController as! PlanOrNotifyViewController
+            let index = tableView.indexPathForCell(sender as! UITableViewCell)
+            let patient = patients[index!.row]
+            vc.isPatient = true
+            vc.patientToManage = patient
         }
+        
     }
     
     // MARK: - Business
@@ -126,5 +137,24 @@ class PatientsListViewController: UITableViewController, AddElementOfTypePatient
         tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
     
+    // MARK First Launch
+    
+    private func checkFirstLaunch() -> Bool {
+        var isFirstLaunch: Bool = false
+        NSUserDefaults.standardUserDefaults().registerDefaults(["FirstLaunch": true])
+        
+        if NSUserDefaults.standardUserDefaults().boolForKey("FirstLaunch") {
+            isFirstLaunch = true
+        }
+        return isFirstLaunch
+    }
+    
+    private func setImageDatabase() {
+        let imagesNames: [String] = ["Bed", "Bicycle", "Car", "Chocolate", "Eat", "Glass", "High school", "Home", "Laptop", "No Activity", "School bus", "Shower", "Soccer", "Tooth brush"]
+        
+        for i in 0..<imagesNames.count {
+            ImageManager.sharedInstance.createImage(i, nameImage: imagesNames[i], pathImage: "")
+        }
+    }
 
 }
