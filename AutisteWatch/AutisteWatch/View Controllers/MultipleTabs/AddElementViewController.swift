@@ -138,11 +138,11 @@ class AddElementViewController: UIViewController , UITextFieldDelegate, UITableV
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Cells.elementCell, forIndexPath: indexPath)
         let label = (cell.viewWithTag(2)) as! UILabel
-//        let image = (cell.viewWithTag(1)) as! UIImageView        
+        let image = (cell.viewWithTag(1)) as! UIImageView        
         if isPatient {
-//            let group = tableViewElements[indexPath.row] as! Group
-//            label.text = group.nameGroup
-//            image.image = UIImage(named: "WatchImageOn")
+            let group = tableViewElements[indexPath.row] as! Group
+            label.text = group.nameGroup
+            image.image = UIImage(named: "WatchImageOn")
         } else if isGroup {
             let patient = tableViewElements[indexPath.row] as! Patient
             label.text = patient.namePatient
