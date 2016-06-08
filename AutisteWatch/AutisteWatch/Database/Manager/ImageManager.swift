@@ -21,9 +21,10 @@ class ImageManager: NSObject {
         return appDelegate.managedObjectContext
     }
     
-    func createImage(nameImage: String, pathImage: String)->Image{
+    func createImage(idImage: NSNumber, nameImage: String, pathImage: String)->Image{
         let entity = NSEntityDescription.entityForName("Image", inManagedObjectContext: managedObjectContext)
         let image = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedObjectContext) as! Image
+        image.idImage = idImage
         image.nameImage = nameImage
         image.pathImage = pathImage
         return image
