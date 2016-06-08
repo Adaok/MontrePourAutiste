@@ -218,7 +218,6 @@
         <!--Planning View Controller-->
         <scene sceneID="1pk-XY-1yy">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="chz-Za-h3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="4X0-Dd-sxf" customClass="PlanningViewController" customModule="AutisteWatch" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="1" sectionFooterHeight="28" id="Kin-D9-LNr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -330,6 +329,7 @@
                         <segue destination="k9F-Cu-mUy" kind="show" identifier="toAddPLannedActivity" id="nFd-F5-0aa"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="chz-Za-h3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3201" y="308.25"/>
         </scene>
