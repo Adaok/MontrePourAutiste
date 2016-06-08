@@ -8,13 +8,18 @@
 
 import UIKit
 
+protocol SelectImageViewControllerDelegate {
+    func selectImageViewController(controller: ImageListViewController, didFinishSelectingItem image: Image)
+}
 class ImageListViewController: UICollectionViewController {
 
     private var images: [Image]?
     let im: ImageManager = ImageManager.sharedInstance
+    var delegate: SelectImageViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView?.backgroundColor = UIColor.whiteColor()
         
         images = im.fetchImages()
 
@@ -55,8 +60,10 @@ class ImageListViewController: UICollectionViewController {
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Cells.imageCell, forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Cells.imageCell, forIndexPath: indexPath) as! ImageViewCell
     
+        cell.image = images![indexPath.row]
+        
         // Configure the cell
     
         return cell
@@ -92,5 +99,9 @@ class ImageListViewController: UICollectionViewController {
     
     }
     */
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        delegate?.selectImageViewController(self, didFinishSelectingItem: images![indexPath.row])
+    }
 
 }
