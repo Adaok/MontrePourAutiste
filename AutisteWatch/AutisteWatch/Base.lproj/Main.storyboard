@@ -749,6 +749,7 @@
                     </view>
                     <connections>
                         <outlet property="imgVw_pictoNotify" destination="W40-49-avm" id="TYw-o0-gXY"/>
+                        <outlet property="txtFld_notification" destination="CQH-oX-Uci" id="ES9-Nb-23B"/>
                         <segue destination="gg8-iq-VYO" kind="show" identifier="toImageListNotify" id="7Gp-0q-XTk"/>
                     </connections>
                 </viewController>
