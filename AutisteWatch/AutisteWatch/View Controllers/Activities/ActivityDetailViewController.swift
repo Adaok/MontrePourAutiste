@@ -15,18 +15,23 @@ protocol ActivityDetailDelegate: class {
 }
 
 // MARK: - Class
-class ActivityDetailViewController: UIViewController {
+class ActivityDetailViewController: UIViewController,SelectImageViewControllerDelegate {
     // MARK: - Outlets
     @IBOutlet weak var imgVw_activityImg: UIImageView!
     @IBOutlet weak var txtFld_activityName: UITextField!
+    @IBOutlet weak var datePck_activityHour: UIDatePicker!
+    @IBOutlet weak var sw_forAll: UISwitch!
+    
     var saveButton: UIBarButtonItem!
     var chooseImgAction: UITapGestureRecognizer!
     
     // MARK: - Attributes
-    var activityImage: UIImage!
-    var activityName: String!
+    var delegate: ActivityDetailDelegate?
     
     var activityToEdit: Activity?
+    var image: Image?
+    
+
     
     let im: ImageManager = ImageManager.sharedInstance
     
@@ -37,15 +42,13 @@ class ActivityDetailViewController: UIViewController {
         chooseImgAction = UITapGestureRecognizer(target: self, action: #selector(self.chooseImg))
         imgVw_activityImg.gestureRecognizers = [chooseImgAction]
         
-        imgVw_activityImg.image = activityImage
-        txtFld_activityName.placeholder = activityName
-        
         if activityToEdit != nil {
             self.imgVw_activityImg.image = UIImage(named: (im.fetchImageById(activityToEdit!.idImage!)!).nameImage!)
             self.txtFld_activityName.placeholder = activityToEdit!.nameActivity
         } else {
             self.imgVw_activityImg.image = UIImage(named: "No Activity")
             self.txtFld_activityName.placeholder = "Veuillez entrer le nom de l'activité"
+//            activityToEdit = Activity()
         }
         // Do any additional setup after loading the view.
     }
@@ -61,14 +64,34 @@ class ActivityDetailViewController: UIViewController {
     func chooseImg() {
         self.performSegueWithIdentifier(Segues.toImageListActivity, sender: self)
     }
-    /*
+    
+    func saveAction() {
+        if activityToEdit != nil {
+            activityToEdit?.idImage = image?.idImage
+            activityToEdit?.nameActivity = txtFld_activityName.text
+            activityToEdit?.rememberHourActivity = datePck_activityHour.date
+        } else {
+            activityToEdit = ActivityManager.sharedInstance.createActivity(txtFld_activityName.text!, imageActivity: image!, dateRemind: datePck_activityHour.date, planning: nil)
+        }
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == Segues.toImageListActivity {
+            let destVC = segue.destinationViewController as! ImageListViewController
+            destVC.delegate = self
+        }
     }
-    */
+    
+    
+    // MARK: - Delegate
+    
+    func selectImageViewController(controller: ImageListViewController, didFinishSelectingItem image: Image) {
+        navigationController?.popViewControllerAnimated(true)
+        self.imgVw_activityImg.image  = UIImage(named: image.nameImage!)
+        self.image = image
+        
+    }
 
 }

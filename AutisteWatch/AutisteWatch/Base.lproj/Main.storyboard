@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3tm-Yp-lmi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3tm-Yp-lmi">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -46,18 +46,24 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="16" y="8" width="317" height="25"/>
+                                            </variation>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="6ht-yw-7WI" firstAttribute="top" secondItem="17u-hc-Dk2" secondAttribute="topMargin" constant="4" id="qsy-E3-1eB"/>
                                         <constraint firstItem="6ht-yw-7WI" firstAttribute="leading" secondItem="17u-hc-Dk2" secondAttribute="leadingMargin" constant="8" id="ugC-hX-ZzM"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="qsy-E3-1eB"/>
                                             <exclude reference="ugC-hX-ZzM"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
                                         <mask key="constraints">
+                                            <exclude reference="qsy-E3-1eB"/>
                                             <include reference="ugC-hX-ZzM"/>
                                         </mask>
                                     </variation>
@@ -119,23 +125,32 @@
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <state key="normal" title="Planning"/>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="139" y="146" width="123" height="51"/>
-                                        </variation>
                                         <connections>
                                             <segue destination="4X0-Dd-sxf" kind="show" identifier="toPlanning" id="YKc-b2-b0n"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="0Nd-wE-gu6" firstAttribute="centerX" secondItem="2QA-gf-fiA" secondAttribute="centerX" id="IqL-H2-Mwo"/>
+                                    <constraint firstItem="0Nd-wE-gu6" firstAttribute="centerY" secondItem="2QA-gf-fiA" secondAttribute="centerY" id="yaI-Ti-Et1"/>
+                                </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="0Nd-wE-gu6"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="IqL-H2-Mwo"/>
+                                        <exclude reference="yaI-Ti-Et1"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="0Nd-wE-gu6"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="IqL-H2-Mwo"/>
+                                        <include reference="yaI-Ti-Et1"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -425,7 +440,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="BxS-1G-IKP">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="BxS-1G-IKP" customClass="ImageViewCell" customModule="AutisteWatch" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="149" height="124"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -466,6 +481,9 @@
                                         <include reference="uG8-8P-hf1"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="imgVw_imgForAcitivity" destination="57a-98-xBp" id="tCO-PE-dAE"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -1091,7 +1109,9 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="datePck_activityHour" destination="j9J-42-8gd" id="uo3-Li-4DX"/>
                         <outlet property="imgVw_activityImg" destination="foO-4a-oFw" id="JFy-3w-eQ6"/>
+                        <outlet property="sw_forAll" destination="hUV-m3-OdC" id="xr3-99-05I"/>
                         <outlet property="txtFld_activityName" destination="BTV-pL-euY" id="DB1-jY-CqD"/>
                         <segue destination="gg8-iq-VYO" kind="show" identifier="toImageListActivity" id="hdV-uC-AaW"/>
                     </connections>
@@ -1109,11 +1129,11 @@
         <image name="Patient" width="17" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jlg-tL-Sqm"/>
         <segue reference="I9W-Z1-rvl"/>
-        <segue reference="nFd-F5-0aa"/>
         <segue reference="GKy-Bb-NTL"/>
         <segue reference="hdV-uC-AaW"/>
+        <segue reference="Tmq-co-uJY"/>
+        <segue reference="nFd-F5-0aa"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.94901960784313721" green="0.79607843137254897" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -145,6 +145,7 @@ class PatientsListViewController: UITableViewController, AddElementOfTypePatient
         
         if NSUserDefaults.standardUserDefaults().boolForKey("FirstLaunch") {
             isFirstLaunch = true
+            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "FirstLaunch")
         }
         return isFirstLaunch
     }

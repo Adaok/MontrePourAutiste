@@ -9,5 +9,14 @@
 import UIKit
 
 class ImageViewCell: UICollectionViewCell {
+    @IBOutlet weak var imgVw_imgForAcitivity: UIImageView!
     
+    
+    var image: Image? {
+        didSet {
+            if let image = image {
+                imgVw_imgForAcitivity.image = UIImage(named: image.nameImage!)
+            }
+        }
+    }
 }
