@@ -8,11 +8,6 @@
 
 import UIKit
 
-protocol PlanningViewControllerDelegate {
-    func displayPlanningOfTypeGroupViewController(controller: PlanOrNotifyViewController, didDisplayingGroup group: Group)
-    func displayPlanningOfTypePatientViewController(controller: PlanOrNotifyViewController, didNotifyGroup patient: Patient)
-}
-
 class PlanningViewController: UITableViewController {
     
     var patientToDisplayPlanning : Patient?
@@ -22,6 +17,13 @@ class PlanningViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if isPatient {
+            print(patientToDisplayPlanning!.namePatient)
+        }
+        if isGroup {
+            print(groupToDisplayPlanning!.nameGroup)
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
