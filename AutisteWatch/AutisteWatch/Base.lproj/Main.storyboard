@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3tm-Yp-lmi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3tm-Yp-lmi">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -221,7 +221,6 @@
         <!--Planning View Controller-->
         <scene sceneID="1pk-XY-1yy">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="chz-Za-h3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="4X0-Dd-sxf" customClass="PlanningViewController" customModule="AutisteWatch" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="1" sectionFooterHeight="28" id="Kin-D9-LNr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -333,6 +332,7 @@
                         <segue destination="k9F-Cu-mUy" kind="show" identifier="toAddPLannedActivity" id="nFd-F5-0aa"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="chz-Za-h3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3201" y="308.25"/>
         </scene>
@@ -409,6 +409,7 @@
             <objects>
                 <collectionViewController id="gg8-iq-VYO" customClass="ImageListViewController" customModule="AutisteWatch" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="DQ1-8j-oYZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pe9-Of-A4Z">
                             <size key="itemSize" width="149" height="124"/>
@@ -418,7 +419,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="BxS-1G-IKP">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <rect key="frame" x="0.0" y="64" width="149" height="124"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="149" height="124"/>
@@ -625,6 +626,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ntr-53-zov"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6PM-07-EmB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom de la notification" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQH-oX-Uci">
@@ -644,8 +646,7 @@
                                         <exclude reference="pZB-QB-8TM"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="70" y="93" width="260" height="260"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="TMk-vW-1BS"/>
                                         <include reference="pZB-QB-8TM"/>
@@ -684,6 +685,9 @@
                                 <exclude reference="W40-49-avm"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="8ov-HI-uaw"/>
+                                <exclude reference="CKT-BX-Fsl"/>
+                                <exclude reference="sbt-oM-DJQ"/>
                                 <exclude reference="9tf-ca-ZGb"/>
                                 <exclude reference="GDI-EO-vo0"/>
                                 <exclude reference="RJV-4s-MYq"/>
@@ -691,9 +695,6 @@
                                 <exclude reference="W2A-oO-j7N"/>
                                 <exclude reference="lEH-EJ-HBs"/>
                                 <exclude reference="wJk-Rh-WPn"/>
-                                <exclude reference="8ov-HI-uaw"/>
-                                <exclude reference="CKT-BX-Fsl"/>
-                                <exclude reference="sbt-oM-DJQ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -702,6 +703,9 @@
                                 <include reference="W40-49-avm"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="8ov-HI-uaw"/>
+                                <include reference="CKT-BX-Fsl"/>
+                                <include reference="sbt-oM-DJQ"/>
                                 <exclude reference="9tf-ca-ZGb"/>
                                 <exclude reference="GDI-EO-vo0"/>
                                 <include reference="RJV-4s-MYq"/>
@@ -709,13 +713,11 @@
                                 <include reference="W2A-oO-j7N"/>
                                 <exclude reference="lEH-EJ-HBs"/>
                                 <include reference="wJk-Rh-WPn"/>
-                                <include reference="8ov-HI-uaw"/>
-                                <include reference="CKT-BX-Fsl"/>
-                                <include reference="sbt-oM-DJQ"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="imgVw_pictoNotify" destination="W40-49-avm" id="TYw-o0-gXY"/>
                         <segue destination="gg8-iq-VYO" kind="show" identifier="toImageListNotify" id="7Gp-0q-XTk"/>
                     </connections>
                 </viewController>
