@@ -76,7 +76,7 @@ class PatientsListViewController: UITableViewController, AddElementOfTypePatient
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PatientCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(Cells.patientCell, forIndexPath: indexPath)
         ((cell.viewWithTag(1)) as! UILabel).text = patients[indexPath.row].namePatient
         return cell
     }

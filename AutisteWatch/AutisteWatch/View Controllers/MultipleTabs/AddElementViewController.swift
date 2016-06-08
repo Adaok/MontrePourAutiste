@@ -32,6 +32,7 @@ class AddElementViewController: UIViewController , UITextFieldDelegate, UITableV
     var patientDelegate : AddElementOfTypePatientViewControllerDelegate?
     var groupDelegate : AddElementOfTypeGroupViewControllerDelegate?
     var tableViewElements = [AnyObject]()
+    var selectedPatientsForGroup : NSSet?
     
     var doneButton = UIBarButtonItem()
     
@@ -52,13 +53,18 @@ class AddElementViewController: UIViewController , UITextFieldDelegate, UITableV
             }
             tableViewElements = GroupManager.sharedInstance.fetchGroups()!
         } else if isGroup {
+            selectedPatientsForGroup = NSSet()
             if groupToEdit != nil {
                 self.navigationItem.title = groupToEdit?.nameGroup
                 txtFld_elementsName.text = groupToEdit?.nameGroup
             } else {
                 self.navigationItem.title = "Nouveau"
             }
+            tableViewElements = PatientManager.sharedInstance.fetchPatients()!
         }
+        
+        tbleVw_elementList.dataSource = self
+        tbleVw_elementList.delegate = self
         
     }
     
@@ -102,6 +108,9 @@ class AddElementViewController: UIViewController , UITextFieldDelegate, UITableV
         } else if isGroup {
             if groupToEdit != nil {
                 groupToEdit?.nameGroup = txtFld_elementsName.text
+                
+                groupToEdit?.relationPatientGroup? = selectedPatientsForGroup!
+                
                 groupDelegate?.editElementOfTypeGroupViewController(self, didFinishEditingItem: groupToEdit!)
             } else {
                 let group = GroupManager.sharedInstance.createGroup(txtFld_elementsName.text!, patients: nil)
@@ -127,12 +136,45 @@ class AddElementViewController: UIViewController , UITextFieldDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PatientsCell", forIndexPath: indexPath)
-        ((cell.viewWithTag(2)) as! UILabel).text = tableViewElements[indexPath.row].namePatient
+        let cell = tableView.dequeueReusableCellWithIdentifier(Cells.elementCell, forIndexPath: indexPath)
+        let label = (cell.viewWithTag(2)) as! UILabel
+//        let image = (cell.viewWithTag(1)) as! UIImageView        
+        if isPatient {
+//            let group = tableViewElements[indexPath.row] as! Group
+//            label.text = group.nameGroup
+//            image.image = UIImage(named: "WatchImageOn")
+        } else if isGroup {
+            let patient = tableViewElements[indexPath.row] as! Patient
+            label.text = patient.namePatient
+            if groupToEdit != nil {
+                let containsPatient = groupToEdit?.relationPatientGroup?.containsObject(patient)
+                if containsPatient! {
+                    cell.accessoryType = .Checkmark
+                } else {
+                    cell.accessoryType = .None
+                }
+            }
+        }
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        doneButton.enabled = true
+        if isGroup {
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            let patient = tableViewElements[indexPath.row] as! Patient
+            let cell = tableView.cellForRowAtIndexPath(indexPath)
+            if groupToEdit != nil {
+                if cell!.accessoryType == .Checkmark {
+                    cell!.accessoryType = .None
+                    let mutable = NSMutableSet.init(set: selectedPatientsForGroup!)
+                    mutable.removeObject(patient)
+                    selectedPatientsForGroup = mutable
+                } else {
+                    cell!.accessoryType = .Checkmark
+                    selectedPatientsForGroup = selectedPatientsForGroup?.setByAddingObject(patient)
+                }
+            }
+        }
     }
 }
