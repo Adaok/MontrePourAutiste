@@ -23,7 +23,7 @@ class PlanOrNotifyViewController: UIViewController {
             self.navigationItem.title = "Gérer \(name)"
         } else if isGroup {
             let nameGroup: String = groupToManage!.nameGroup!
-            self.navigationItem.title = "Gérer le groupe \(nameGroup)"
+            self.navigationItem.title = "Gérer \(nameGroup)"
         }
 
         // Do any additional setup after loading the view.
