@@ -47,6 +47,12 @@ class ActivityManager: NSObject {
         return [Activity]()
     }
     
+    func fetchActivitiesByPlanning(planning: Planning)->[Activity]?{
+        let setActivities = planning.relationActivityPlanning
+        let activities:[Activity] = setActivities?.allObjects as! [Activity]
+        return activities
+    }
+    
     func deleteActivities(activities:[Activity]){
         for var activity:Activity in activities{
             self.managedObjectContext.deleteObject(activity)

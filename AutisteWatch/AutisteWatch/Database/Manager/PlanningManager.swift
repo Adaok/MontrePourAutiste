@@ -21,12 +21,10 @@ class PlanningManager: NSObject {
         return appDelegate.managedObjectContext
     }
     
-    func createPlanning(patient: Patient, activity: Activity)->Planning{
+    func createPlanning(patient: Patient)->Planning{
         let entity = NSEntityDescription.entityForName("Planning", inManagedObjectContext: managedObjectContext)
         let planning = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedObjectContext) as! Planning
         planning.relationPatientPlanning = patient
-        let activityToAdd = NSSet.init(object: activity)
-        planning.relationActivityPlanning = activityToAdd
         return planning
     }
     
@@ -55,6 +53,19 @@ class PlanningManager: NSObject {
         }
         
         return [Planning]()
+    }
+    
+    func fetchPlanningsByGroup(group: Group)->[Planning]?{
+        let setPatients = group.relationPatientGroup
+        let patients:[Patient] = setPatients?.allObjects as! [Patient]
+        var planningsOfGroup = [Planning]()
+        
+        for var patient in patients {
+            var planning = fetchPlanningsByPatient(patient)
+            planningsOfGroup.append(planning![0])
+        }
+        
+        return planningsOfGroup
     }
     
     func deletePlannings(plannings:[Planning]){

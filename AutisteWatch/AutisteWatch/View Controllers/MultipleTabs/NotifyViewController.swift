@@ -26,14 +26,13 @@ class NotifyViewController: UIViewController, UITextFieldDelegate {
         txtFld_notification.delegate = self
         
         validateButton = UIBarButtonItem(title: "Valider", style: .Done, target: self, action:#selector(NotifyViewController.validateNotification(_:)))
+        self.navigationItem.title = "Notifier"
     
         if isPatient {
-            let name : String = patientToNotify!.namePatient!
-            self.navigationItem.title = "Notifier \(name)"
+            
         }
         if isGroup {
-            let nameGroup : String = groupToNotify!.nameGroup!
-            self.navigationItem.title = "Notifier \(nameGroup)"
+            
         }
         
         self.navigationItem.setRightBarButtonItem(validateButton, animated: true)

@@ -97,6 +97,7 @@ class AddElementViewController: UIViewController , UITextFieldDelegate, UITableV
                 patientDelegate?.editElementOfTypePatientViewController(self, didFinishEditingItem: patientToEdit!)
             } else {
                 let patient = PatientManager.sharedInstance.createPatient(txtFld_elementsName.text!, idWatch: "", group: nil)
+                let planning = PlanningManager.sharedInstance.createPlanning(patient)
                 patientDelegate?.addElementOfTypePatientViewController(self, didFinishAddingItem: patient)
             }
         } else if isGroup {

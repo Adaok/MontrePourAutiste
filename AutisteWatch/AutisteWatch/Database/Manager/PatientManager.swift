@@ -49,7 +49,7 @@ class PatientManager: NSObject {
             let result = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Patient]
             return result
         } catch let error as NSError {
-            print("Could not fetch Groups : \(error)")
+            print("Could not fetch Patients : \(error)")
         }
         
         return [Patient]()

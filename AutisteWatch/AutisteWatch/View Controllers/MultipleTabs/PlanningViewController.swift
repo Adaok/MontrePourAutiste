@@ -14,15 +14,29 @@ class PlanningViewController: UITableViewController {
     var groupToDisplayPlanning : Group?
     var isPatient : Bool = false
     var isGroup : Bool = false
+    
+    var planning = [Planning]()
+    
+    var activitiesToDisplay = [Activity]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "Planifier"
+        
         if isPatient {
             print(patientToDisplayPlanning!.namePatient)
+            print(patientToDisplayPlanning!.relationPlanningPatient)
+            planning = PlanningManager.sharedInstance.fetchPlanningsByPatient(patientToDisplayPlanning!)!
+            
+            activitiesToDisplay = ActivityManager.sharedInstance.fetchActivitiesByPlanning(planning[0])!
+
+            print(activitiesToDisplay)
         }
         if isGroup {
             print(groupToDisplayPlanning!.nameGroup)
+            planning = PlanningManager.sharedInstance.fetchPlanningsByGroup(groupToDisplayPlanning!)!
+            
         }
 
         // Uncomment the following line to preserve selection between presentations
@@ -103,5 +117,19 @@ class PlanningViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Utilities
+    
+    func sortBySharedActivities(plannings:[Planning])->[Activity]?{
+        var allActivities = [Activity]()
+        
+        var sharedActivities = [Activity]()
+        
+        for var planning in plannings {
+            ActivityManager.sharedInstance.fetchActivitiesByPlanning(planning)
+        }
+        
+        return sharedActivities
+    }
 
 }
