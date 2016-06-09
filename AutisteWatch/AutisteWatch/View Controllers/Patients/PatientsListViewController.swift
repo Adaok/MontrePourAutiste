@@ -29,6 +29,8 @@ class PatientsListViewController: UITableViewController, AddElementOfTypePatient
             self.setImageDatabase()
         }
         
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : self.view.tintColor]
+        
         self.clearsSelectionOnViewWillAppear = false
 
     }
