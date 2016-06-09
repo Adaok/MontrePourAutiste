@@ -36,7 +36,7 @@ class NotificationController: WKUserNotificationInterfaceController {
     override func didReceiveLocalNotification(localNotification: UILocalNotification, withCompletion completionHandler: ((WKUserNotificationInterfaceType) -> Void)) {
         descriptionLabel.setText(localNotification.alertTitle)
         imageNotification.setImageNamed(localNotification.alertLaunchImage)
-        timeLabel.setDate(NSDate.init(timeIntervalSinceNow: 0))
+        
         completionHandler(.Custom)
     }
     

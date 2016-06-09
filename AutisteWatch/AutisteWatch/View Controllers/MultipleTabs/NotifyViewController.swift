@@ -19,6 +19,7 @@ class NotifyViewController: UIViewController, UITextFieldDelegate {
     var groupToNotify : Group?
     var isPatient : Bool = false
     var isGroup : Bool = false
+    let app=UIApplication.sharedApplication()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,7 +86,16 @@ class NotifyViewController: UIViewController, UITextFieldDelegate {
     }
     
     func validateNotification(notification: AnyObject){
-        print("sented")
+        let alertTime = NSDate().dateByAddingTimeInterval(5)
+        let notifyAlarm=UILocalNotification()
+        notifyAlarm.fireDate=alertTime
+        notifyAlarm.timeZone=NSTimeZone()
+        notifyAlarm.soundName=UILocalNotificationDefaultSoundName
+        notifyAlarm.category="AllNotif"
+        notifyAlarm.alertTitle=txtFld_notification.text
+        notifyAlarm.alertLaunchImage=imgVw_pictoNotify.image?.accessibilityIdentifier
+        app.scheduleLocalNotification(notifyAlarm)
+        
     }
 
 }

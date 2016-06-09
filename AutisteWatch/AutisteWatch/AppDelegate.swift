@@ -14,10 +14,26 @@ import WatchConnectivity
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var session: WCSession? {
+        didSet {
+            if let session = session{
+                session.delegate = self
+                session.activateSession()
+            }
+        }
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let settings = UIUserNotificationSettings (forTypes:
+            [UIUserNotificationType.Sound,
+                UIUserNotificationType.Alert,
+                UIUserNotificationType.Badge], categories: nil)
+        application.registerUserNotificationSettings(settings)
+        
+        if WCSession.isSupported(){
+            session=WCSession.defaultSession()
+        }
         return true
     }
 
