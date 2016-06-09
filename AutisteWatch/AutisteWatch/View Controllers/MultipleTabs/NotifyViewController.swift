@@ -93,7 +93,8 @@ class NotifyViewController: UIViewController, UITextFieldDelegate {
         notifyAlarm.soundName=UILocalNotificationDefaultSoundName
         notifyAlarm.category="AllNotif"
         notifyAlarm.alertTitle=txtFld_notification.text
-        notifyAlarm.alertLaunchImage=imgVw_pictoNotify.image?.accessibilityIdentifier
+        notifyAlarm.alertBody="test"
+        //notifyAlarm.alertLaunchImage=imgVw_pictoNotify.image?.accessibilityIdentifier
         app.scheduleLocalNotification(notifyAlarm)
         
     }
