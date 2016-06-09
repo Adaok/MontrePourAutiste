@@ -38,13 +38,24 @@ class ActivityDetailViewController: UIViewController,SelectImageViewControllerDe
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        saveButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(saveAction))
+        
+        self.navigationItem.rightBarButtonItem = saveButton
+        
+        
+        
         imgVw_activityImg.userInteractionEnabled = true
         chooseImgAction = UITapGestureRecognizer(target: self, action: #selector(self.chooseImg))
         imgVw_activityImg.gestureRecognizers = [chooseImgAction]
         
         if activityToEdit != nil {
-            self.imgVw_activityImg.image = UIImage(named: (im.fetchImageById(activityToEdit!.idImage!)!).nameImage!)
+            image = im.fetchImageById((activityToEdit?.idImage)!)
+            self.imgVw_activityImg.image = UIImage(named: (image?.nameImage!)!)
             self.txtFld_activityName.placeholder = activityToEdit!.nameActivity
+            self.datePck_activityHour.date = activityToEdit!.rememberHourActivity!
+            
+            self.navigationItem.title = activityToEdit!.nameActivity
         } else {
             self.imgVw_activityImg.image = UIImage(named: "No Activity")
             self.txtFld_activityName.placeholder = "Veuillez entrer le nom de l'activité"
@@ -70,8 +81,12 @@ class ActivityDetailViewController: UIViewController,SelectImageViewControllerDe
             activityToEdit?.idImage = image?.idImage
             activityToEdit?.nameActivity = txtFld_activityName.text
             activityToEdit?.rememberHourActivity = datePck_activityHour.date
+            delegate?.activityDetailViewController(self, didFinishEditingItem: activityToEdit!)
+            
+            print(activityToEdit?.idImage)
         } else {
             activityToEdit = ActivityManager.sharedInstance.createActivity(txtFld_activityName.text!, imageActivity: image!, dateRemind: datePck_activityHour.date, planning: nil)
+            delegate?.activityDetailViewController(self, didFinishAddingItem: activityToEdit!)
         }
     }
     // MARK: - Navigation

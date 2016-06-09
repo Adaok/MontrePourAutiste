@@ -32,7 +32,7 @@ class ImageManager: NSObject {
     
     func fetchImageById(idImage: NSNumber) -> Image?{
         let fetchRequest=NSFetchRequest(entityName: "Image")
-        let predicate = NSPredicate(format:"idImage like %@" , idImage)
+        let predicate = NSPredicate(format:"idImage = %@" , idImage)
         fetchRequest.predicate = predicate
         do {
             let result = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Image]
