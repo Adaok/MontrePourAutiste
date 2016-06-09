@@ -113,7 +113,7 @@ class AddElementViewController: UIViewController , UITextFieldDelegate, UITableV
                 
                 groupDelegate?.editElementOfTypeGroupViewController(self, didFinishEditingItem: groupToEdit!)
             } else {
-                let group = GroupManager.sharedInstance.createGroup(txtFld_elementsName.text!, patients: nil)
+                let group = GroupManager.sharedInstance.createGroup(txtFld_elementsName.text!, patients: selectedPatientsForGroup?.allObjects as? [Patient] )
                 groupDelegate?.addElementOfTypeGroupViewController(self, didFinishAddingItem: group)
             }
         }
@@ -142,6 +142,7 @@ class AddElementViewController: UIViewController , UITextFieldDelegate, UITableV
         if isPatient {
 //            let group = tableViewElements[indexPath.row] as! Group
 //            label.text = group.nameGroup
+            label.text = "Identifiant Montre"
             image.image = UIImage(named: "WatchImageOn")
         } else if isGroup {
             let patient = tableViewElements[indexPath.row] as! Patient
@@ -159,12 +160,13 @@ class AddElementViewController: UIViewController , UITextFieldDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        doneButton.enabled = true
+        if txtFld_elementsName.text?.characters.count != 0 {
+            doneButton.enabled = true
+        }
         if isGroup {
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
             let patient = tableViewElements[indexPath.row] as! Patient
             let cell = tableView.cellForRowAtIndexPath(indexPath)
-            if groupToEdit != nil {
                 if cell!.accessoryType == .Checkmark {
                     cell!.accessoryType = .None
                     let mutable = NSMutableSet.init(set: selectedPatientsForGroup!)
@@ -174,7 +176,6 @@ class AddElementViewController: UIViewController , UITextFieldDelegate, UITableV
                     cell!.accessoryType = .Checkmark
                     selectedPatientsForGroup = selectedPatientsForGroup?.setByAddingObject(patient)
                 }
-            }
         }
     }
 }

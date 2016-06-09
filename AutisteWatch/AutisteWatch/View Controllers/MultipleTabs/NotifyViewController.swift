@@ -26,7 +26,7 @@ class NotifyViewController: UIViewController, UITextFieldDelegate {
         
         txtFld_notification.delegate = self
         
-        validateButton = UIBarButtonItem(title: "Valider", style: .Done, target: self, action:#selector(NotifyViewController.validateNotification(_:)))
+        validateButton = UIBarButtonItem(title: "Envoyer", style: .Done, target: self, action:#selector(NotifyViewController.validateNotification(_:)))
     
         if isPatient {
             let name : String = patientToNotify!.namePatient!
