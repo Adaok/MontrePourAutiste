@@ -68,7 +68,7 @@ class PatientsListViewController: UITableViewController, AddElementOfTypePatient
         if editingStyle == .Delete {
             // Delete the row from the data source
             //tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            let planningManager = PlanningManager()
+            let planningManager = PlanningManager.sharedInstance
             planningManager.deleteForPatient(patients[indexPath.row])
             manager.deletePatient(patients[indexPath.row])
             patients.removeAtIndex(indexPath.row)
@@ -76,6 +76,7 @@ class PatientsListViewController: UITableViewController, AddElementOfTypePatient
             
         }
     }
+    
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
