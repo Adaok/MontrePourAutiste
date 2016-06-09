@@ -23,7 +23,7 @@ class ActivityViewCell: UITableViewCell {
                 lbl_activityName.text = activity.nameActivity
                 print(lbl_activityName.text)
                 
-                dateFormat.dateFormat = "hh:mm"
+                dateFormat.dateFormat = "HH:mm"
                 lbl_activityHour.text = dateFormat.stringFromDate(activity.rememberHourActivity!)
             }
         }

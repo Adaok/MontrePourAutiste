@@ -908,7 +908,9 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="5Iz-r1-lxC" firstAttribute="top" secondItem="h0b-we-aVx" secondAttribute="topMargin" constant="-8" id="1tu-Gq-TtX"/>
+                                        <constraint firstItem="5Iz-r1-lxC" firstAttribute="top" secondItem="h0b-we-aVx" secondAttribute="topMargin" constant="-8" id="1tu-Gq-TtX">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                        </constraint>
                                         <constraint firstItem="5Iz-r1-lxC" firstAttribute="height" secondItem="h0b-we-aVx" secondAttribute="height" id="1wQ-SZ-gZm"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="NhC-IR-iHh" secondAttribute="trailing" id="7eZ-z7-cKS"/>
                                         <constraint firstItem="5Iz-r1-lxC" firstAttribute="centerY" secondItem="h0b-we-aVx" secondAttribute="centerY" id="Rau-Uu-tSs"/>
