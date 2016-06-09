@@ -52,11 +52,8 @@ class ImageListViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        if images != nil {
-            return images!.count
-        } else {
-            return 0
-        }
+        let count = images?.count
+        return count!
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {

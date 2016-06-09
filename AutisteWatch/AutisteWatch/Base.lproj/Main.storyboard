@@ -1019,22 +1019,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pour tous ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwX-Lt-e9h">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="j9J-42-8gd">
                                 <rect key="frame" x="-160" y="-108" width="320" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="486462114.18897903">
                                     <!--2016-06-01 08:21:54 +0000-->
                                 </date>
                             </datePicker>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hUV-m3-OdC">
-                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
-                                <color key="onTintColor" red="0.94901960780000005" green="0.79607843140000001" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </switch>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom de l'activité" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BTV-pL-euY">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <constraints>
@@ -1057,17 +1047,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="foO-4a-oFw" firstAttribute="centerX" secondItem="ZjK-OX-pdq" secondAttribute="centerX" id="1QO-qO-Xem"/>
-                            <constraint firstItem="hUV-m3-OdC" firstAttribute="top" secondItem="j9J-42-8gd" secondAttribute="bottom" constant="65" id="3WP-JT-nci"/>
                             <constraint firstAttribute="leadingMargin" secondItem="BTV-pL-euY" secondAttribute="leading" id="7Rp-nj-X40"/>
                             <constraint firstItem="j9J-42-8gd" firstAttribute="centerX" secondItem="ZjK-OX-pdq" secondAttribute="centerX" id="8E9-fi-4Ax"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Iq5-np-rnZ" secondAttribute="leading" id="AVR-mE-zyz"/>
-                            <constraint firstItem="mwX-Lt-e9h" firstAttribute="centerY" secondItem="hUV-m3-OdC" secondAttribute="centerY" id="BjT-8B-DyP"/>
                             <constraint firstItem="j9J-42-8gd" firstAttribute="width" secondItem="ZjK-OX-pdq" secondAttribute="width" id="DFx-9E-PjS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BTV-pL-euY" secondAttribute="trailing" id="KDd-RU-Pzw"/>
                             <constraint firstItem="BTV-pL-euY" firstAttribute="top" secondItem="foO-4a-oFw" secondAttribute="bottom" constant="8" id="Pss-SN-FDV"/>
                             <constraint firstItem="foO-4a-oFw" firstAttribute="top" secondItem="Ilk-9w-ovw" secondAttribute="bottom" constant="8" id="alN-rn-cEk"/>
-                            <constraint firstItem="mwX-Lt-e9h" firstAttribute="leading" secondItem="hUV-m3-OdC" secondAttribute="trailing" constant="8" id="fZo-Ay-le3"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="hUV-m3-OdC" secondAttribute="leading" id="fb6-sj-5sm"/>
                             <constraint firstItem="Iq5-np-rnZ" firstAttribute="top" secondItem="BTV-pL-euY" secondAttribute="bottom" constant="8" id="g3i-7z-7cG"/>
                             <constraint firstItem="j9J-42-8gd" firstAttribute="top" secondItem="Iq5-np-rnZ" secondAttribute="bottom" constant="8" id="hM2-v7-W2v"/>
                         </constraints>
@@ -1075,21 +1061,15 @@
                             <mask key="subviews">
                                 <exclude reference="foO-4a-oFw"/>
                                 <exclude reference="Iq5-np-rnZ"/>
-                                <exclude reference="mwX-Lt-e9h"/>
                                 <exclude reference="j9J-42-8gd"/>
-                                <exclude reference="hUV-m3-OdC"/>
                                 <exclude reference="BTV-pL-euY"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="7Rp-nj-X40"/>
                                 <exclude reference="KDd-RU-Pzw"/>
                                 <exclude reference="Pss-SN-FDV"/>
-                                <exclude reference="3WP-JT-nci"/>
-                                <exclude reference="fb6-sj-5sm"/>
                                 <exclude reference="AVR-mE-zyz"/>
                                 <exclude reference="g3i-7z-7cG"/>
-                                <exclude reference="BjT-8B-DyP"/>
-                                <exclude reference="fZo-Ay-le3"/>
                                 <exclude reference="1QO-qO-Xem"/>
                                 <exclude reference="alN-rn-cEk"/>
                                 <exclude reference="8E9-fi-4Ax"/>
@@ -1101,21 +1081,15 @@
                             <mask key="subviews">
                                 <include reference="foO-4a-oFw"/>
                                 <include reference="Iq5-np-rnZ"/>
-                                <include reference="mwX-Lt-e9h"/>
                                 <include reference="j9J-42-8gd"/>
-                                <include reference="hUV-m3-OdC"/>
                                 <include reference="BTV-pL-euY"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="7Rp-nj-X40"/>
                                 <include reference="KDd-RU-Pzw"/>
                                 <include reference="Pss-SN-FDV"/>
-                                <include reference="3WP-JT-nci"/>
-                                <include reference="fb6-sj-5sm"/>
                                 <include reference="AVR-mE-zyz"/>
                                 <include reference="g3i-7z-7cG"/>
-                                <include reference="BjT-8B-DyP"/>
-                                <include reference="fZo-Ay-le3"/>
                                 <include reference="1QO-qO-Xem"/>
                                 <include reference="alN-rn-cEk"/>
                                 <include reference="8E9-fi-4Ax"/>
@@ -1127,7 +1101,6 @@
                     <connections>
                         <outlet property="datePck_activityHour" destination="j9J-42-8gd" id="uo3-Li-4DX"/>
                         <outlet property="imgVw_activityImg" destination="foO-4a-oFw" id="JFy-3w-eQ6"/>
-                        <outlet property="sw_forAll" destination="hUV-m3-OdC" id="xr3-99-05I"/>
                         <outlet property="txtFld_activityName" destination="BTV-pL-euY" id="DB1-jY-CqD"/>
                         <segue destination="gg8-iq-VYO" kind="show" identifier="toImageListActivity" id="hdV-uC-AaW"/>
                     </connections>

@@ -42,7 +42,6 @@
 		B86F89491D06C8D400C7E94F /* NotifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F89481D06C8D400C7E94F /* NotifyViewController.swift */; };
 		B86F894B1D08259000C7E94F /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F894A1D08259000C7E94F /* ImageViewCell.swift */; };
 		B86F894D1D08670500C7E94F /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F894C1D08670500C7E94F /* ActivityTableViewController.swift */; };
-		B8E9E18F1CFF0DC200B70923 /* ActivitiesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9E18E1CFF0DC200B70923 /* ActivitiesListViewController.swift */; };
 		B8E9E1911CFF0DD600B70923 /* GroupsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9E1901CFF0DD600B70923 /* GroupsListViewController.swift */; };
 		B8E9E1931CFF0DE500B70923 /* PatientsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9E1921CFF0DE500B70923 /* PatientsListViewController.swift */; };
 		B8E9E1951CFF0E2500B70923 /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E9E1941CFF0E2500B70923 /* ActivityDetailViewController.swift */; };
@@ -155,7 +154,6 @@
 		B86F89481D06C8D400C7E94F /* NotifyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyViewController.swift; sourceTree = "<group>"; };
 		B86F894A1D08259000C7E94F /* ImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
 		B86F894C1D08670500C7E94F /* ActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
-		B8E9E18E1CFF0DC200B70923 /* ActivitiesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesListViewController.swift; sourceTree = "<group>"; };
 		B8E9E1901CFF0DD600B70923 /* GroupsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsListViewController.swift; sourceTree = "<group>"; };
 		B8E9E1921CFF0DE500B70923 /* PatientsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientsListViewController.swift; sourceTree = "<group>"; };
 		B8E9E1941CFF0E2500B70923 /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
@@ -332,7 +330,6 @@
 		B8E9E18B1CFF0D4000B70923 /* Activities */ = {
 			isa = PBXGroup;
 			children = (
-				B8E9E18E1CFF0DC200B70923 /* ActivitiesListViewController.swift */,
 				B8E9E1941CFF0E2500B70923 /* ActivityDetailViewController.swift */,
 				B8E9E1A41D0086FE00B70923 /* ActivityViewCell.swift */,
 				B86F894C1D08670500C7E94F /* ActivityTableViewController.swift */,
@@ -584,7 +581,6 @@
 				73BD3EF21CFE3001005C080D /* GroupManager.swift in Sources */,
 				73BD3EF01CFE2FEA005C080D /* PlanningManager.swift in Sources */,
 				B8E9E19E1CFF0ECE00B70923 /* ImgSelectionViewController.swift in Sources */,
-				B8E9E18F1CFF0DC200B70923 /* ActivitiesListViewController.swift in Sources */,
 				B8E9E1A31CFF110900B70923 /* Segues.swift in Sources */,
 				B86F894B1D08259000C7E94F /* ImageViewCell.swift in Sources */,
 				73BD3EE11CFE2F23005C080D /* Activity.swift in Sources */,

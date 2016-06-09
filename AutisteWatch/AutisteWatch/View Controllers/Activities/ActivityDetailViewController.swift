@@ -79,23 +79,15 @@ class ActivityDetailViewController: UIViewController,SelectImageViewControllerDe
     func saveAction() {
         if activityToEdit != nil {
             activityToEdit?.idImage = image?.idImage
-            activityToEdit?.nameActivity = txtFld_activityName.text
-            activityToEdit?.rememberHourActivity = datePck_activityHour.date
-            if sw_forAll.on {
-                for patient in pam.fetchPatients()! {
-                    pm.createPlanning(patient, activity: activityToEdit!)
-                }
+            if txtFld_activityName.text != "" {
+                activityToEdit?.nameActivity = txtFld_activityName.text
             }
+            activityToEdit?.rememberHourActivity = datePck_activityHour.date
+
             delegate?.activityDetailViewController(self, didFinishEditingItem: activityToEdit!)
-            
-            print(activityToEdit?.idImage)
         } else {
             activityToEdit = ActivityManager.sharedInstance.createActivity(txtFld_activityName.text!, imageActivity: image!, dateRemind: datePck_activityHour.date, planning: nil)
-            if sw_forAll.on {
-                for patient in pam.fetchPatients()! {
-                    pm.createPlanning(patient, activity: activityToEdit!)
-                }
-            }
+
             delegate?.activityDetailViewController(self, didFinishAddingItem: activityToEdit!)
         }
     }

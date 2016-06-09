@@ -31,7 +31,7 @@ class ActivityTableViewController: UITableViewController, ActivityDetailDelegate
     
     override func viewWillAppear(animated: Bool) {
         self.tabBarController?.navigationItem.setRightBarButtonItem(addActivityButton, animated: true)
-        self.tabBarController?.navigationItem.title = "Activities"
+        self.tabBarController?.navigationItem.title = "Activités"
         tableView.reloadData()
     }
 
@@ -101,8 +101,10 @@ class ActivityTableViewController: UITableViewController, ActivityDetailDelegate
         if activities != nil {
             cell.activity = activities![indexPath.row]
         }
-        // Configure the cell...
-
+        
+        cell.imgVw_activityImage.image = UIImage(named: (im.fetchImageById(activities![indexPath.row].idImage!)?.nameImage)!)
+        cell.lbl_activityName.text = activities![indexPath.row].nameActivity
+        
         return cell
     }
     
